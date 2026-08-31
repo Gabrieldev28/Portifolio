@@ -29,12 +29,12 @@ const menuItems = [
             : 'text-gray-300 hover:text-white px-3 py-2'
         ]"
       >
-        <component :is="item.icon" class="w-5 h-5" />
+        <component :is="item.icon" class="w-8 h-8" />
         
         <!-- Texto só aparece quando está ativo -->
         <span
           v-if="route.name === item.name"
-          class="text-sm font-medium pr-1 whitespace-nowrap"
+          class="text-lg font-medium pr-1 whitespace-nowrap"
         >
           {{ item.label }}
         </span>

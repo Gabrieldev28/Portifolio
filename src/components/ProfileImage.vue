@@ -3,7 +3,7 @@
     <img
       src="../assets/images/profile.png"
       alt="Gabriel Augusto"
-      class="relative z-10 h-full lg:w-50 w-full object-contain "
+      class="relative z-10 h-full lg:w-50 xl:w-full object-contain "
     />
   </div>
 </template>]
