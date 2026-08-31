@@ -14,7 +14,7 @@ import SkillsCard from './components/SkillsCard.vue';
     <div class="flex flex-col justify-center items-center max-w-360  gap-6">
       <HeaderNav />
       <div class="w-10/12 glass glass-light rounded-4xl p-4 flex flex-col gap-2">
-        <div class="flex justify-between h-8">
+        <div class="flex justify-between h-8 font-medium">
           <span class="flex gap-2 items-center">
             <DotIcon />
             <p class="text-lg lg:text-sm">Disponível para novos projetos</p>
@@ -43,7 +43,7 @@ import SkillsCard from './components/SkillsCard.vue';
       <SkillsCard />
       <div class="flex flex-col gap-4">
         <BottomMenu />
-        <p class="p-4 glass glass-light rounded-full italic font-extralight text-sm">Designed & Engineered by Gabriel
+        <p class="p-4 glass glass-light rounded-full italic font-extralight text-sm text-center">Designed & Engineered by Gabriel
           Augusto • 2026</p>
       </div>
     </div>

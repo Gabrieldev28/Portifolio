@@ -112,7 +112,6 @@ body {
     #1877D0 50%,
     #205F99 100%
   );
-  padding: 8px;
   border-radius: 40px;
-    box-shadow: 2px 2px 25px rgb(0 0 0 / 0.25);
+  box-shadow: 2px 2px 25px rgb(0 0 0 / 0.25);
 }
