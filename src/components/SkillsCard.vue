@@ -1,9 +1,12 @@
 <template>
-  <div class="w-10/12 glass glass-light p-4 rounded-3xl">
+  <div
+    class="w-10/12 glass p-4 rounded-3xl"
+    :class="glassClass()"
+  >
     <!-- Header -->
     <div class="flex justify-between font-semibold mb-2">
       <p>Minhas Skills</p>
-      <p class="">Sempre aprendendo, sempre evoluindo</p>
+      <p>Sempre aprendendo, sempre evoluindo</p>
     </div>
 
     <!-- Skills -->
@@ -33,6 +36,9 @@ import NodeIcon from './icons/NodeIcon.vue'
 import NetIcon from './icons/NetIcon.vue'
 import DbIcon from './icons/DbIcon.vue'
 import MongoDbIcon from './icons/MongoDbIcon.vue'
+import { useTheme } from '@/composables/useTheme'
+
+const { glassClass } = useTheme()
 
 const skills = [
   { name: 'UI/UX', icon: FigmaIcon },

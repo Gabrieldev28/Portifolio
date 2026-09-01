@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-between w-10/12">
     <!-- Toggle componentizado -->
-    <ThemeToggle />
+    <ThemeToggle class="sm:none"/>
 
     <div
       class="w-8/12 lg:w-5/12 glass p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
