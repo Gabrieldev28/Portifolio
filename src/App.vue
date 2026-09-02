@@ -7,7 +7,7 @@ const { glassClass } = useTheme()
 
 <template>
   <div class="w-full flex justify-center items-center min-h-screen">
-    <div class="flex flex-col justify-center items-center max-w-360 gap-6">
+    <div class="flex flex-col justify-center items-center max-w-360 w-full gap-6">
 
       <!-- Aqui as views vão trocar -->
       <RouterView />

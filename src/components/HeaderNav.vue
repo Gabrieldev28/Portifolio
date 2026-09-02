@@ -1,14 +1,17 @@
 <template>
   <div class="flex justify-between w-10/12">
-    <!-- Toggle componentizado -->
-    <ThemeToggle class="sm:none"/>
+    <!-- Toggle -->
+    <ThemeToggle class="sm:none" />
 
+    <!-- Path dinâmico -->
     <div
       class="w-8/12 lg:w-5/12 glass p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
       :class="glassClass()"
     >
       <LockIcon class="w-6 lg:w-4" />
-      <span class="font-semibold text-sm">GabrielOS.io</span>
+      <span class="font-semibold text-sm">
+        GabrielOS.io{{ currentPath }}
+      </span>
     </div>
 
     <div
@@ -31,6 +34,8 @@
 </template>
 
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import ThemeToggle from './ThemeToggle.vue'
 import BehanceIcon from './icons/BehanceIcon.vue'
 import GithubIcon from './icons/GithubIcon.vue'
@@ -41,4 +46,10 @@ import LockIcon from './icons/LockIcon.vue'
 import { useTheme } from '../composables/useTheme'
 
 const { glassClass } = useTheme()
+const route = useRoute()
+
+// Exibe /profile, /projects, /exit etc. (vazio na home)
+const currentPath = computed(() => {
+  return route.path === '/' ? '' : route.path
+})
 </script>
