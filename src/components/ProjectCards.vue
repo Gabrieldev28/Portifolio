@@ -3,8 +3,9 @@
     <div
       v-for="project in projects"
       :key="project.name"
-      class="flex flex-col w-1/3 p-6 glass rounded-4xl gap-4"
+      class="flex flex-col w-1/3 p-6 glass rounded-4xl gap-4 hover-project transition ease-in"
       :class="glassClass()"
+      @click="openProject(project)"
     >
       <div class="flex items-center gap-8">
         <component :is="project.logo" :class="project.logoClass" />
@@ -25,18 +26,25 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal do projeto Nitro -->
+  <NitroModal v-model:open="showNitroModal" />
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue'
 import AskIcon from '@/components/icons/AskIcon.vue'
 import CubeIcon from '@/components/icons/CubeIcon.vue'
 import LumeaLogo from '@/components/icons/LumeaLogo.vue'
 import NitroLogo from '@/components/icons/NitroLogo.vue'
 import PencilIcon from '@/components/icons/PencilIcon.vue'
 import UnicesumarLogo from '@/components/icons/UnicesumarLogo.vue'
+import NitroModal from './NitroModal.vue' // ajuste o caminho se necessário
 import { useTheme } from '@/composables/useTheme'
 
 const { glassClass } = useTheme()
+
+const showNitroModal = ref(false)
 
 const projects = [
   {
@@ -62,4 +70,27 @@ const projects = [
     role: 'UX Research',
   },
 ]
+
+function openProject(project: { name: string }) {
+  if (project.name === 'Nitro') {
+    showNitroModal.value = true
+  }
+  // Depois você pode adicionar os outros projetos aqui
+  // else if (project.name === 'Lumea') { ... }
+}
 </script>
+
+<style>
+.hover-project:hover {
+  background: linear-gradient(
+    to bottom,
+    rgba(125, 180, 233, 0.4),
+    rgba(129, 188, 243, 0.5),
+    rgba(67, 135, 199, 0.3)
+  );
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  box-shadow: 12px 12px 30px rgba(49, 163, 230, 0.1);
+  cursor: pointer;
+}
+</style>
