@@ -17,7 +17,5 @@ import DescriptionCard from '@/components/DescriptionCard.vue';
 import HeaderNav from '@/components/HeaderNav.vue';
 import SloganCard from '@/components/SloganCard.vue';
 import ThinkCard from '@/components/ThinkCard.vue';
-import { useTheme } from '@/composables/useTheme'
-const { glassClass } = useTheme()
 
 </script>
