@@ -6,51 +6,22 @@
             experiências e construo produtos. Se esta experiência despertou alguma ideia, conversa ou possibilidade, a
             próxima etapa acontece fora do sistema.</p>
     </div>
-    <div class="w-10/12">
+    <div class="w-10/12 flex gap-8">
         <div class="w-1/5 flex flex-col items-center gap-4">
-            <div class="w-full flex h-14 justify-between items-center glass rounded-full px-4" :class="glassClass()">
-                <a href="https://www.behance.net/gabriel-ui-ux" target="_blank" rel="noopener noreferrer"
-                    class="flex gap-2 items-center">
-                    <BehanceIcon class="w-10" />
-                    Behance
-                </a>
+            <a v-for="link in socialLinks" :key="link.name" :href="link.href" target="_blank" rel="noopener noreferrer"
+                class="w-full flex h-14 justify-between items-center glass rounded-full px-4 link-hover" :class="glassClass()">
+                <div class="flex gap-2 items-center">
+                    <component :is="link.icon" class="w-10" />
+                    {{ link.name }}
+                </div>
                 <ArrowIcon />
-            </div>
-            <div class="w-full flex h-14 justify-between items-center glass rounded-full px-4" :class="glassClass()">
-                <a href="https://www.behance.net/gabriel-ui-ux" target="_blank" rel="noopener noreferrer"
-                    class="flex gap-2 items-center">
-                    <GithubIcon class="w-10" />
-                    GitHub
-                </a>
-                <ArrowIcon />
-            </div>
-            <div class="w-full flex h-14 justify-between items-center glass rounded-full px-4" :class="glassClass()">
-                <a href="https://www.behance.net/gabriel-ui-ux" target="_blank" rel="noopener noreferrer"
-                    class="flex gap-2 items-center">
-                    <LinkedinIcon class="w-10" />
-                    LinkedIn
-                </a>
-                <ArrowIcon />
-            </div>
-            <div class="w-full flex h-14 justify-between items-center glass rounded-full px-4" :class="glassClass()">
-                <a href="https://www.behance.net/gabriel-ui-ux" target="_blank" rel="noopener noreferrer"
-                    class="flex gap-2 items-center">
-                    <EmailIcon class="w-10" />
-                    Email
-                </a>
-                <ArrowIcon />
-            </div>
-            <div class="w-full flex h-14 justify-between items-center glass rounded-full px-4" :class="glassClass()">
-                <a href="https://www.behance.net/gabriel-ui-ux" target="_blank" rel="noopener noreferrer"
-                    class="flex gap-2 items-center">
-                    <WhatsappIcon class="w-10" />
-                    WhatsApp
-                </a>
-                <ArrowIcon />
-            </div>
+            </a>
         </div>
-        <div>
-            
+        <div
+            class="w-4/5 glass-think p-8 rounded-4xl flex flex-col items-center justify-center gap-6 leading-loose tracking-wider">
+            <h4 class="font-bold text-4xl">Think • Structure • Design • Code</h4>
+            <p class="text-xl italic">O ciclo que conecta entendimento, design e desenvolvimento em cada projeto.</p>
+            <p class="text-lg">Session complete • GabrielOS v1.0 • Santo André — SP</p>
         </div>
     </div>
 
@@ -70,4 +41,24 @@ import { useTheme } from '@/composables/useTheme'
 
 const { glassClass } = useTheme()
 
+const socialLinks = [
+    { name: 'Behance', href: 'https://www.behance.net/gabriel-ui-ux', icon: BehanceIcon },
+    { name: 'GitHub', href: 'https://github.com/seu-usuario', icon: GithubIcon },
+    { name: 'LinkedIn', href: 'https://linkedin.com/in/seu-perfil', icon: LinkedinIcon },
+    { name: 'Email', href: 'mailto:seuemail@exemplo.com', icon: EmailIcon },
+    { name: 'WhatsApp', href: 'https://wa.me/5511999999999', icon: WhatsappIcon },
+]
 </script>
+
+<style>
+.link-hover:hover {
+    background: linear-gradient(to bottom,
+            rgba(125, 180, 233, 0.4),
+            rgba(129, 188, 243, 0.5),
+            rgba(67, 135, 199, 0.3));
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    box-shadow: 12px 12px 30px rgba(49, 163, 230, 0.1);
+    cursor: pointer;
+}
+</style>
