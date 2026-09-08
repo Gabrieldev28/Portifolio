@@ -1,4 +1,3 @@
-```vue
 <template>
   <div class="relative shrink-0 h-10" ref="dropdownRef">
 
@@ -16,17 +15,17 @@
 
       <DownIcon
         class="w-4 transition-transform duration-200"
-        :class="{ 'rotate-180': isOpen }"
+        :class="iconRotation"
       />
     </button>
 
     <!-- Dropdown -->
     <div
       v-show="isOpen"
-      class="absolute top-full right-0 -mt-2 z-50
+      class="absolute right-0 z-50
              glass rounded-3xl p-1.5 min-w-13
              flex flex-col gap-1 shadow-xl"
-      :class="glassClass()"
+      :class="[glassClass(), dropdownPosition]"
     >
       <button
         v-for="lang in languages"
@@ -67,70 +66,67 @@ const { locale } = useI18n()
 
 const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
+const isMobile = ref(false)
 
 const languages = [
-  {
-    code: 'pt',
-    flag: BrazilFlag,
-  },
-  {
-    code: 'en',
-    flag: USFlag,
-  },
-  {
-    code: 'es',
-    flag: SpainFlag,
-  },
-  {
-    code: 'fr',
-    flag: FranceFlag,
-  },
-  {
-    code: 'de',
-    flag: GermanyFlag,
-  },
-  {
-    code: 'ru',
-    flag: RussiaFlag,
-  },
+  { code: 'pt', flag: BrazilFlag },
+  { code: 'en', flag: USFlag },
+  { code: 'es', flag: SpainFlag },
+  { code: 'fr', flag: FranceFlag },
+  { code: 'de', flag: GermanyFlag },
+  { code: 'ru', flag: RussiaFlag },
 ]
 
 const currentLanguage = computed(() => {
-  return (
-    languages.find((lang) => lang.code === locale.value) ||
-    languages[0]
-  )
+  return languages.find((lang) => lang.code === locale.value) || languages[0]
+})
+
+// Posição do dropdown
+const dropdownPosition = computed(() => {
+  return isMobile.value
+    ? 'bottom-full mb-2'   // abre para cima no mobile
+    : 'top-full mt-2'      // abre para baixo no desktop
+})
+
+// Rotação do ícone
+const iconRotation = computed(() => {
+  if (isMobile.value) {
+    // No mobile a seta aponta para cima quando fechado
+    return isOpen.value ? '' : 'rotate-180'
+  }
+  // No desktop a seta aponta para baixo quando fechado
+  return isOpen.value ? 'rotate-180' : ''
 })
 
 function selectLanguage(code: string) {
   locale.value = code
-
   localStorage.setItem('lang', code)
-
   isOpen.value = false
 }
 
 function handleClickOutside(event: MouseEvent) {
-  if (
-    dropdownRef.value &&
-    !dropdownRef.value.contains(event.target as Node)
-  ) {
+  if (dropdownRef.value && !dropdownRef.value.contains(event.target as Node)) {
     isOpen.value = false
   }
 }
 
+function checkScreenSize() {
+  isMobile.value = window.innerWidth < 1024 // breakpoint lg do Tailwind
+}
+
 onMounted(() => {
   const saved = localStorage.getItem('lang')
-
   if (saved && languages.some((lang) => lang.code === saved)) {
     locale.value = saved
   }
 
+  checkScreenSize()
+  window.addEventListener('resize', checkScreenSize)
   document.addEventListener('click', handleClickOutside)
 })
 
 onUnmounted(() => {
+  window.removeEventListener('resize', checkScreenSize)
   document.removeEventListener('click', handleClickOutside)
 })
 </script>
-```
