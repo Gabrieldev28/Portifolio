@@ -15,7 +15,7 @@
       </div>
 
       <p class="font-extralight tracking-wider text-lg">
-        {{ project.description }}
+        {{ t(project.description) }}
       </p>
 
       <div class="flex gap-4 items-center">
@@ -33,15 +33,17 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import AskIcon from '@/components/icons/AskIcon.vue'
 import CubeIcon from '@/components/icons/CubeIcon.vue'
 import LumeaLogo from '@/components/icons/LumeaLogo.vue'
 import NitroLogo from '@/components/icons/NitroLogo.vue'
 import PencilIcon from '@/components/icons/PencilIcon.vue'
 import UnicesumarLogo from '@/components/icons/UnicesumarLogo.vue'
-import NitroModal from './NitroModal.vue' // ajuste o caminho se necessário
+import NitroModal from './NitroModal.vue'
 import { useTheme } from '@/composables/useTheme'
 
+const { t } = useI18n()
 const { glassClass } = useTheme()
 
 const showNitroModal = ref(false)
@@ -49,21 +51,21 @@ const showNitroModal = ref(false)
 const projects = [
   {
     name: 'Nitro',
-    description: 'Plataforma social automotiva com foco em comunidade, perfis de veículos e engajamento.',
+    description: 'projects.nitroDescription',
     logo: NitroLogo,
     icon: PencilIcon,
     role: 'UI/UX e Flutter',
   },
   {
     name: 'Lumea',
-    description: 'Sistema para simplificar a gestão financeira de casais por meio de indicadores de saúde financeira.',
+    description: 'projects.lumeaDescription',
     logo: LumeaLogo,
     icon: CubeIcon,
     role: 'Product Design',
   },
   {
     name: 'UniLevel',
-    description: 'Gamificação para educação com progressão, níveis e retenção de alunos.',
+    description: 'projects.uniLevelDescription',
     logo: UnicesumarLogo,
     logoClass: 'w-16 h-16',
     icon: AskIcon,
