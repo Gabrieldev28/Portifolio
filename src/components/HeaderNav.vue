@@ -5,7 +5,7 @@
 
     <!-- Path dinâmico -->
     <div
-      class="w-8/12 lg:w-5/12 glass p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
+      class="w-8/12 lg:w-5/12 glass max-h-16 p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
       :class="glassClass()"
     >
       <LockIcon class="w-6 lg:w-4" />
@@ -13,17 +13,11 @@
         GabrielOS.io{{ currentPath }}
       </span>
     </div>
+    <LanguageButton />
+
 
     <div
-      class="flex glass px-6 rounded-full gap-2 items-center"
-      :class="glassClass()"
-    >
-      <FlagIcon class="w-6" />
-      <DownIcon class="w-6" />
-    </div>
-
-    <div
-      class="flex glass rounded-full px-4 gap-2 items-center"
+      class="flex glass rounded-full px-4 gap-2 items-center max-h-16"
       :class="glassClass()"
     >
       <LinkedinIcon class="w-6" />
@@ -44,6 +38,7 @@ import FlagIcon from './icons/FlagIcon.vue'
 import DownIcon from './icons/DownIcon.vue'
 import LockIcon from './icons/LockIcon.vue'
 import { useTheme } from '../composables/useTheme'
+import LanguageButton from './LanguageButton.vue'
 
 const { glassClass } = useTheme()
 const route = useRoute()

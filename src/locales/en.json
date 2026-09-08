@@ -1,0 +1,60 @@
+{
+  "button": {
+    "home": "Home",
+    "about": "About me",
+    "projects": "Projects",
+    "contact": "Contact",
+    "copywriter": "Designed & Engineered by Gabriel Augusto • 2026"
+  },
+  "home": {
+    "disponible": "Available for new projects",
+    "local": "Santo André - SP",
+    "hello": "Hello, I am",
+    "design": "UI/UX Design",
+    "developer": "Developer",
+    "description": "I turn ideas into intuitive, functional and memorable digital experiences, connecting design, product and development to create solutions that make sense for users and businesses. I am the bridge between the project's vision and its technical execution.",
+    "skill": "My Skills",
+    "evolution": "Always learning, always evolving"
+  },
+  "aboutMe": {
+    "certification": "My education",
+    "ads": "Systems Analysis and Development",
+    "fullstack": "Fullstack Development",
+    "db": "SQL and NoSQL Databases",
+    "logic": "Programming Logic",
+    "process": "My mental process",
+    "description": "I like to understand how things work before thinking about how they should look.\nBefore opening Figma or writing code, I try to understand the system, reduce complexity and create a structure that makes sense for the people who will use it.\nThis way of thinking shows up from the creation of this portfolio inspired by spatial computing to projects like LUMEA, Nitro and other solutions that were born from the attempt to simplify processes, connect people and reorganize digital experiences.\nMore than creating interfaces, I seek to create clarity.",
+    "understand": "Understand",
+    "understandP": "Business, user, constraints and context.",
+    "structure": "Structure",
+    "structureP": "I turn chaos into clear flows and relationships.",
+    "simple": "Simplify",
+    "simpleP": "I remove complexity without losing context.",
+    "project": "Design",
+    "projectP": "Interfaces and decisions that make sense.",
+    "build": "Build",
+    "buildP": "I take the solution from concept to code.",
+    "slogan1": "Think",
+    "slogan2": "Structure",
+    "slogan3": "Design",
+    "slogan4": "Code",
+    "slogan": "The cycle that connects understanding, design and development in every project."
+  },
+  "projects": {
+    "nitroDescription": "Automotive social platform focused on community, vehicle profiles and engagement.",
+    "lumeaDescription": "System designed to simplify couples' financial management through financial health indicators.",
+    "uniLevelDescription": "Education gamification with progression, levels and student retention.",
+    "projectsDescription": "This portfolio is an attempt to translate the Vision Pro experience to the web. The projects above follow the same principle: question the format before accepting the solution. Lumea, Nitro and UniLevel represent different ways of solving problems through structure, behavior and experience. Click on any project to explore the full case; for other experiments, redesigns and interface studies, visit my Behance.",
+    "link": "Click here to access"
+  },
+  "contact": {
+    "thanks": "Thank you for exploring GabrielOS",
+    "description": "You have gone through a representation of how I organize ideas, design experiences and build products. If this experience sparked any idea, conversation or possibility, the next step happens outside the system.",
+    "slogan1": "Think",
+    "slogan2": "Structure",
+    "slogan3": "Design",
+    "slogan4": "Code",
+    "slogan": "The cycle that connects understanding, design and development in every project.",
+    "session": "Session complete"
+  }
+}

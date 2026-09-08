@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-28 glass p-1 flex rounded-full items-center justify-between cursor-pointer"
+    class="w-28 max-h-16 glass p-1 flex rounded-full items-center justify-between cursor-pointer"
     :class="glassClass()"
     @click="toggleTheme"
   >

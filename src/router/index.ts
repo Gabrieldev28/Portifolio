@@ -23,8 +23,8 @@ const router = createRouter({
       component: ProjectsView,
     },
     {
-      path: '/contact',
-      name: 'contact',
+      path: '/exit',
+      name: 'exit',
       component: ContactView,
     },
   ],

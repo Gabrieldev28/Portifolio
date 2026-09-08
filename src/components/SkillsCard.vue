@@ -5,8 +5,8 @@
   >
     <!-- Header -->
     <div class="flex justify-between font-semibold mb-2">
-      <p>Minhas Skills</p>
-      <p>Sempre aprendendo, sempre evoluindo</p>
+      <p>{{ t('home.skill') }}</p>
+      <p>{{ t('home.evolution') }}</p>
     </div>
 
     <!-- Skills -->
@@ -37,8 +37,10 @@ import NetIcon from './icons/NetIcon.vue'
 import DbIcon from './icons/DbIcon.vue'
 import MongoDbIcon from './icons/MongoDbIcon.vue'
 import { useTheme } from '@/composables/useTheme'
+import { useI18n } from 'vue-i18n'
 
 const { glassClass } = useTheme()
+const { t } = useI18n()
 
 const skills = [
   { name: 'UI/UX', icon: FigmaIcon },
