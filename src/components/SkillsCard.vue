@@ -4,23 +4,30 @@
     :class="glassClass()"
   >
     <!-- Header -->
-    <div class="flex justify-between font-semibold mb-2">
+    <div class="flex justify-between font-semibold mb-4 text-sm lg:text-base">
       <p>{{ t('home.skill') }}</p>
-      <p>{{ t('home.evolution') }}</p>
+      <p class="text-right">{{ t('home.evolution') }}</p>
     </div>
 
     <!-- Skills -->
-    <div class="flex justify-between items-center font-semibold">
+    <div
+      class="grid grid-cols-4 landscape:flex landscape:justify-between landscape:items-center gap-y-6"
+    >
       <template v-for="(skill, index) in skills" :key="skill.name">
-        <div class="flex flex-col items-center justify-center p-8 gap-2">
-          <component :is="skill.icon" class="h-8 w-8" />
-          <p class="text-sm">{{ skill.name }}</p>
+        <div class="flex flex-col items-center justify-center gap-1.5">
+          <component
+            :is="skill.icon"
+            class="h-5 w-5 landscape:h-7 landscape:w-7 lg:h-8 lg:w-8"
+          />
+          <p class="text-[11px] landscape:text-xs lg:text-sm font-medium">
+            {{ skill.name }}
+          </p>
         </div>
 
-        <!-- Separador vertical -->
+        <!-- Separador vertical (só no landscape) -->
         <div
           v-if="index < skills.length - 1"
-          class="h-12 w-px bg-white/20"
+          class="hidden landscape:block h-10 w-px bg-white/20"
         />
       </template>
     </div>

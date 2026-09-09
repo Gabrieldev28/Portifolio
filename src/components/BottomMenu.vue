@@ -26,11 +26,6 @@
         </span>
       </RouterLink>
     </nav>
-
-    <!-- Toggle de tema (aparece no mobile) -->
-    <div class="block lg:hidden">
-      <ThemeToggle />
-    </div>
   </div>
 </template>
 

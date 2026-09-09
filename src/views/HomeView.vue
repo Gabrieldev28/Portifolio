@@ -1,36 +1,45 @@
 <template>
   <HeaderNav />
-  
+
   <div class="w-10/12 glass rounded-4xl p-4 flex flex-col gap-2" :class="glassClass()">
-    <div class="flex justify-between h-8 font-medium">
-      <span class="flex gap-2 items-center">
+    <!-- Topo (disponível + localização) -->
+    <div class="flex justify-between h-8 font-regular landscape:font-medium">
+      <span class="flex gap-1 items-center text-xs">
         <DotIcon />
-        <p class="text-lg lg:text-sm">{{ t('home.disponible') }}</p>
+        <p class="text-[10px] lg:text-sm">{{ t('home.disponible') }}</p>
       </span>
-      <span class="flex items-center gap-2">
+      <span class="text-[10px] flex items-center gap-1">
         <LocalIcon class="w-4" />
         <p>{{ t('home.local') }}</p>
       </span>
     </div>
 
-    <div class="flex justify-between items-center">
-      <ProfileImage />
-      <div class="w-5/8 flex flex-col justify-center gap-4">
-        <span class="text-3xl font-light">{{ t('home.hello') }}</span>
-        
-        <img 
-          src="../assets/images/gabrielAugusto.svg" 
-          alt="gabriel augusto" 
-          class="w-3/4" 
-        />
-        
-        <div class="flex text-2xl gap-4 italic font-normal">
-          <span>{{ t('home.design') }}</span>
-          <span>•</span>
-          <span>{{ t('home.developer') }}</span>
+    <!-- Conteúdo principal -->
+    <div class="flex w-full justify-between items-center gap-4">
+      <!-- Imagem lado esquerdo (só landscape) -->
+      <ProfileImage class="portrait:hidden landscape:flex shrink-0" />
+
+      <div class="flex-1 flex flex-col justify-center gap-4">
+        <div class="w-full flex items-center gap-3">
+          <!-- Imagem no mobile vertical -->
+          <ProfileImage class="portrait:flex landscape:hidden shrink-0" />
+
+          <div class="flex flex-1 flex-col gap-1">
+            <span class="text-sm font-light">{{ t('home.hello') }}</span>
+            <img
+              src="../assets/images/gabrielAugusto.svg"
+              alt="gabriel augusto"
+              class="w-full landscape:w-3/4"
+            />
+            <div class="flex w-full text-sm gap-1 italic font-normal">
+              <span>{{ t('home.design') }}</span>
+              <span>•</span>
+              <span>{{ t('home.developer') }}</span>
+            </div>
+          </div>
         </div>
-        
-        <p class="text-xl font-extralight">
+
+        <p class="text-base font-extralight">
           {{ t('home.description') }}
         </p>
       </div>

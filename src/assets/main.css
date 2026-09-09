@@ -14,6 +14,9 @@
   --font-brand: "Dune Rise", sans-serif;
   --font-sans: "Satoshi", sans-serif;
   --font-project : "Sansation", sans-serif;
+  --breakpoint-portrait: (orientation: portrait);
+  --breakpoint-landscape: (orientation: landscape);
+
 }
 
 :root {
