@@ -1,7 +1,7 @@
 <template>
   <HeaderNav />
 
-  <div class="w-10/12 glass rounded-4xl p-4 flex flex-col gap-2" :class="glassClass()">
+  <div class="w-10/12 glass rounded-2xl p-4 flex flex-col gap-2" :class="glassClass()">
     <!-- Topo (disponível + localização) -->
     <div class="flex justify-between h-8 font-regular landscape:font-medium">
       <span class="flex gap-1 items-center text-xs">
@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <p class="text-base font-extralight">
+        <p class="w-full text-xs font-extralight p-1">
           {{ t('home.description') }}
         </p>
       </div>

@@ -1,72 +1,65 @@
 <template>
-  <div class="relative shrink-0 h-10" ref="dropdownRef">
-
+  <div class="relative shrink-0" ref="dropdownRef">
     <!-- Botão -->
     <button
-      class="flex items-center gap-2 glass h-10 lg:h-16 px-5 rounded-full cursor-pointer transition-all"
+      class="flex items-center gap-2 glass h-10 px-4 rounded-full cursor-pointer transition-all"
       :class="glassClass()"
       @click.stop="isOpen = !isOpen"
     >
       <img
         :src="currentLanguage.flag"
         :alt="currentLanguage.code"
-        class="w-6 h-5 object-cover rounded-sm"
+        class="w-5 h-4 object-cover rounded-sm"
       />
-
       <DownIcon
-        class="w-4 transition-transform duration-200"
-        :class="iconRotation"
+        class="w-3.5 transition-transform duration-200"
+        :class="isOpen ? '' : 'rotate-180'"
       />
     </button>
 
-    <!-- Dropdown -->
+    <!-- Dropdown (forçado para absolute + abre para cima) -->
     <div
       v-show="isOpen"
-      class="absolute right-0 z-50
-             glass rounded-3xl p-1 min-w-12
-             flex flex-col gap-1 shadow-xl"
-      :class="[glassClass(), dropdownPosition]"
+      class="!absolute right-0 bottom-full mb-2 z-50
+             glass rounded-2xl p-1.5 flex flex-col gap-1 shadow-xl"
+      :class="glassClass()"
+      style="position: absolute;"
     >
       <button
         v-for="lang in languages"
         :key="lang.code"
-        class="flex items-center self-center justify-center
-               w-10 h-10 rounded-full transition-all
-               hover:bg-white/10"
+        class="flex items-center justify-center w-9 h-9 rounded-full transition-all hover:bg-white/10"
         :class="{ 'bg-white/15': lang.code === locale }"
         @click="selectLanguage(lang.code)"
       >
         <img
           :src="lang.flag"
           :alt="lang.code"
-          class="w-6 h-5 object-cover rounded-sm"
+          class="w-5 h-4 object-cover rounded-sm"
         />
       </button>
     </div>
-
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useI18n } from 'vue-i18n'
-
 import DownIcon from './icons/DownIcon.vue'
-import { useTheme } from '../composables/useTheme'
+import { useTheme } from '@/composables/useTheme'
 
-import BrazilFlag from '../assets/flags/br.svg'
-import USFlag from '../assets/flags/us.svg'
-import SpainFlag from '../assets/flags/es.svg'
-import FranceFlag from '../assets/flags/fr.svg'
-import GermanyFlag from '../assets/flags/de.svg'
-import RussiaFlag from '../assets/flags/ru.svg'
+import BrazilFlag from '@/assets/flags/br.svg'
+import USFlag from '@/assets/flags/us.svg'
+import SpainFlag from '@/assets/flags/es.svg'
+import FranceFlag from '@/assets/flags/fr.svg'
+import GermanyFlag from '@/assets/flags/de.svg'
+import RussiaFlag from '@/assets/flags/ru.svg'
 
 const { glassClass } = useTheme()
 const { locale } = useI18n()
 
 const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
-const isMobile = ref(false)
 
 const languages = [
   { code: 'pt', flag: BrazilFlag },
@@ -81,23 +74,6 @@ const currentLanguage = computed(() => {
   return languages.find((lang) => lang.code === locale.value) || languages[0]
 })
 
-// Posição do dropdown
-const dropdownPosition = computed(() => {
-  return isMobile.value
-    ? 'bottom-full mb-2'   // abre para cima no mobile
-    : 'top-full mt-2'      // abre para baixo no desktop
-})
-
-// Rotação do ícone
-const iconRotation = computed(() => {
-  if (isMobile.value) {
-    // No mobile a seta aponta para cima quando fechado
-    return isOpen.value ? '' : 'rotate-180'
-  }
-  // No desktop a seta aponta para baixo quando fechado
-  return isOpen.value ? 'rotate-180' : ''
-})
-
 function selectLanguage(code: string) {
   locale.value = code
   localStorage.setItem('lang', code)
@@ -110,23 +86,15 @@ function handleClickOutside(event: MouseEvent) {
   }
 }
 
-function checkScreenSize() {
-  isMobile.value = window.innerWidth < 1024 // breakpoint lg do Tailwind
-}
-
 onMounted(() => {
   const saved = localStorage.getItem('lang')
   if (saved && languages.some((lang) => lang.code === saved)) {
     locale.value = saved
   }
-
-  checkScreenSize()
-  window.addEventListener('resize', checkScreenSize)
   document.addEventListener('click', handleClickOutside)
 })
 
 onUnmounted(() => {
-  window.removeEventListener('resize', checkScreenSize)
   document.removeEventListener('click', handleClickOutside)
 })
 </script>

@@ -2,7 +2,7 @@
 import BottomMenu from '@/components/BottomMenu.vue'
 import { useTheme } from '@/composables/useTheme'
 import ThemeToggle from './components/ThemeToggle.vue';
-import LanguageButton from './components/LanguageButton.vue';
+import LanguageMobileButton from './components/LanguageMobileButton.vue';
 
 const { glassClass } = useTheme()
 </script>
@@ -16,15 +16,15 @@ const { glassClass } = useTheme()
 
       <div class="flex flex-col gap-4">
         <BottomMenu />
-        <div class="flex">
+        <div class="flex w-full items-center">
           
           <div class="flex lg:hidden"><ThemeToggle /></div>
           
 
-          <p class="p-4 glass rounded-full italic font-extralight text-sm text-center" :class="glassClass()">
-            Designed & Engineered by Gabriel Augusto • 2026
+          <p class="p-4 glass rounded-full italic font-extralight text-[10px] text-center" :class="glassClass()">
+            Designed & Engineered by Gabriel • 2026
           </p>
-          <div class="flex lg:hidden"><LanguageButton /></div>
+          <div class="flex lg:hidden"><LanguageMobileButton /></div>
           
         </div>
       </div>
