@@ -1,7 +1,7 @@
 <template>
   <HeaderNav />
 
-  <div class="w-10/12 glass rounded-2xl p-4 flex flex-col gap-2" :class="glassClass()">
+  <div class="w-10/12 xl:w-8/12 2xl:w-10/12 glass rounded-2xl p-4 flex flex-col gap-2" :class="glassClass()">
     <!-- Topo (disponível + localização) -->
     <div class="flex justify-between h-8 font-regular landscape:font-medium">
       <span class="flex gap-1 items-center text-xs">
@@ -19,7 +19,7 @@
       <!-- Imagem lado esquerdo (só landscape) -->
       <ProfileImage class="portrait:hidden landscape:flex shrink-0" />
 
-      <div class="flex-1 flex flex-col justify-center gap-4">
+      <div class="flex-1 flex flex-col justify-center portrait:gap-4 landscape:gap-1 lg:gap-0">
         <div class="w-full flex items-center gap-3">
           <!-- Imagem no mobile vertical -->
           <ProfileImage class="portrait:flex landscape:hidden shrink-0" />
@@ -29,9 +29,9 @@
             <img
               src="../assets/images/gabrielAugusto.svg"
               alt="gabriel augusto"
-              class="w-full landscape:w-3/4"
+              class="w-full landscape:w-2/4 lg:w-2/4"
             />
-            <div class="flex w-full text-sm gap-1 italic font-normal">
+            <div class="flex w-full text-sm lg:text-lg gap-1 italic font-extralight lg:font-normal">
               <span>{{ t('home.design') }}</span>
               <span>•</span>
               <span>{{ t('home.developer') }}</span>
@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <p class="w-full text-xs font-extralight p-1">
+        <p class="w-full text-xs lg:text-base font-extralight p-1">
           {{ t('home.description') }}
         </p>
       </div>

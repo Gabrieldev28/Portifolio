@@ -9,14 +9,14 @@ const { glassClass } = useTheme()
 
 <template>
   <div class="w-full flex justify-center items-center min-h-screen">
-    <div class="flex flex-col justify-center items-center max-w-360 w-full gap-6">
+    <div class="flex flex-col justify-center items-center max-w-360 w-full gap-3 2xl:gap-6">
 
       <!-- Aqui as views vão trocar -->
       <RouterView />
 
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-2 xl:gap-2 2xl:gap-4">
         <BottomMenu />
-        <div class="flex w-full items-center">
+        <div class="flex w-full items-center justify-center">
           
           <div class="flex lg:hidden"><ThemeToggle /></div>
           

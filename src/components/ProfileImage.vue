@@ -1,7 +1,7 @@
 <template>
-  <div class="relative overflow-hidden rounded-3xl bg-black/40 shrink-0
-              w-24 landscape:w-48
-              lg:w-50 xl:w-1/4">
+  <div class="relative overflow-hidden rounded-2xl 2xl:rounded-3xl bg-black/40 shrink-0
+              w-24 landscape:w-28
+              lg:w-40 2xl:w-1/4">
     <img
       src="../assets/images/profile.png"
       alt="Gabriel Augusto"

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-10/12 glass p-4 rounded-2xl"
+    class="w-10/12 xl:w-8/12 2xl:w-10/12 glass p-4 rounded-2xl"
     :class="glassClass()"
   >
     <!-- Header -->
@@ -14,10 +14,10 @@
       class="grid grid-cols-4 landscape:flex landscape:justify-between landscape:items-center gap-y-6"
     >
       <template v-for="(skill, index) in skills" :key="skill.name">
-        <div class="flex flex-col items-center justify-center gap-1">
+        <div class="flex flex-col items-center justify-center gap-1 lg:p-4">
           <component
             :is="skill.icon"
-            class="h-4 w-4 lg:h-8 lg:w-8"
+            class="h-4 w-4 lg:h-6 lg:w-6 2xl:h-8 lg:w-8"
           />
           <p class="text-[10px] landscape:text-xs lg:text-sm font-regular">
             {{ skill.name }}

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-between w-10/12">
+  <div class="flex justify-between w-10/12 xl:w-8/12 2xl:w-10/12 ">
     <!-- Toggle -->
     <ThemeToggle class="hidden lg:flex" />
 
