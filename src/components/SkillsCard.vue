@@ -1,25 +1,25 @@
 <template>
   <div
-    class="w-10/12 xl:w-8/12 2xl:w-10/12 glass p-4 rounded-2xl"
+    class="w-10/12 xl:w-8/12 2xl:w-10/12 glass p-3 lg:p-4 rounded-2xl lg:rounded-3xl"
     :class="glassClass()"
   >
     <!-- Header -->
-    <div class="flex justify-between font-medium mb-4 text-[10px] lg:text-base">
+    <div class="flex justify-between font-medium mb-1 lg:mb-4 text-[10px] lg:text-base">
       <p>{{ t('home.skill') }}</p>
       <p class="text-right">{{ t('home.evolution') }}</p>
     </div>
 
     <!-- Skills -->
     <div
-      class="grid grid-cols-4 landscape:flex landscape:justify-between landscape:items-center gap-y-6"
+      class="grid grid-cols-4 landscape:flex landscape:justify-between landscape:items-center gap-y-2 lg:gap-y-6"
     >
       <template v-for="(skill, index) in skills" :key="skill.name">
-        <div class="flex flex-col items-center justify-center gap-1 lg:p-4">
+        <div class="flex flex-col items-center justify-center gap-0 lg:gap-2 lg:p-4">
           <component
             :is="skill.icon"
-            class="h-4 w-4 lg:h-6 lg:w-6 2xl:h-8 lg:w-8"
+            class="h-4 w-4 lg:h-6 lg:w-6 2xl:h-8 2xl:w-8"
           />
-          <p class="text-[10px] landscape:text-xs lg:text-sm font-regular">
+          <p class="text-[10px] lg:text-sm font-regular">
             {{ skill.name }}
           </p>
         </div>

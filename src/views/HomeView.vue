@@ -1,14 +1,14 @@
 <template>
   <HeaderNav />
 
-  <div class="w-10/12 xl:w-8/12 2xl:w-10/12 glass rounded-2xl p-4 flex flex-col gap-2" :class="glassClass()">
+  <div class="w-10/12 xl:w-8/12 2xl:w-10/12 glass rounded-2xl lg:rounded-3xl p-2 lg:p-4 flex flex-col gap-2" :class="glassClass()">
     <!-- Topo (disponível + localização) -->
-    <div class="flex justify-between h-8 font-regular landscape:font-medium">
+    <div class="flex justify-between h-1 p-1 lg:h-8 font-regular landscape:font-extralight lg:font-medium">
       <span class="flex gap-1 items-center text-xs">
-        <DotIcon />
+        <DotIcon class="w-2 lg:w-4" />
         <p class="text-[10px] lg:text-sm">{{ t('home.disponible') }}</p>
       </span>
-      <span class="text-[10px] flex items-center gap-1">
+      <span class="text-[10px] lg:text-sm flex items-center gap-1">
         <LocalIcon class="w-4" />
         <p>{{ t('home.local') }}</p>
       </span>
@@ -19,7 +19,7 @@
       <!-- Imagem lado esquerdo (só landscape) -->
       <ProfileImage class="portrait:hidden landscape:flex shrink-0" />
 
-      <div class="flex-1 flex flex-col justify-center portrait:gap-4 landscape:gap-1 lg:gap-0">
+      <div class="flex-1 flex flex-col justify-center portrait:gap-2 landscape:gap-1 lg:gap-0">
         <div class="w-full flex items-center gap-3">
           <!-- Imagem no mobile vertical -->
           <ProfileImage class="portrait:flex landscape:hidden shrink-0" />
@@ -29,7 +29,7 @@
             <img
               src="../assets/images/gabrielAugusto.svg"
               alt="gabriel augusto"
-              class="w-full landscape:w-2/4 lg:w-2/4"
+              class="w-full landscape:w-2/6 lg:w-2/4"
             />
             <div class="flex w-full text-sm lg:text-lg gap-1 italic font-extralight lg:font-normal">
               <span>{{ t('home.design') }}</span>
@@ -39,7 +39,7 @@
           </div>
         </div>
 
-        <p class="w-full text-xs lg:text-base font-extralight p-1">
+        <p class="w-full text-[10px] lg:text-base font-extralight p-1 leading-3 lg:leading-5">
           {{ t('home.description') }}
         </p>
       </div>
@@ -47,9 +47,11 @@
   </div>
 
   <SkillsCard />
+  <ExpandCard class="portrait:flex-col landscape:hidden"/>
 </template>
 
 <script lang="ts" setup>
+import ExpandCard from '@/components/ExpandCard.vue'
 import HeaderNav from '@/components/HeaderNav.vue'
 import DotIcon from '@/components/icons/DotIcon.vue'
 import LocalIcon from '@/components/icons/LocalIcon.vue'

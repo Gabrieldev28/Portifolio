@@ -28,7 +28,7 @@
       <button
         v-for="lang in languages"
         :key="lang.code"
-        class="flex items-center justify-center w-9 h-9 rounded-full transition-all hover:bg-white/10"
+        class="flex items-center justify-center w-8 h-8 rounded-full transition-all hover:bg-white/10"
         :class="{ 'bg-white/15': lang.code === locale }"
         @click="selectLanguage(lang.code)"
       >

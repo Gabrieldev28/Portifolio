@@ -1,15 +1,15 @@
 <template>
-  <div class="flex justify-between w-10/12 xl:w-8/12 2xl:w-10/12 ">
+  <div class="flex justify-between w-10/12 lg:w-8/12 2xl:w-10/12 ">
     <!-- Toggle -->
     <ThemeToggle class="hidden lg:flex" />
 
     <!-- Path dinâmico -->
     <div
-      class="w-full lg:w-5/12 glass max-h-16 p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
+      class="w-full lg:w-5/12 glass h-8 lg:h-16 max-h-16 p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
       :class="glassClass()"
     >
-      <LockIcon class="w-6 lg:w-4" />
-      <span class="font-semibold text-sm">
+      <LockIcon class="w-3 lg:w-4" />
+      <span class="font-semibold text-xs lg:text-sm">
         GabrielOS.io{{ currentPath }}
       </span>
     </div>
