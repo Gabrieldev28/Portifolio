@@ -2,51 +2,51 @@
   <HeaderNav />
 
   <div
-    class="portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 flex flex-col rounded-4xl glass p-8 leading-loose tracking-wider gap-4"
+    class="portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 flex flex-col rounded-2xl lg:rounded-4xl glass p-3 lg:p-8 leading-loose tracking-wider portrait:gap-2 landscape:gap-0 lg:gap-4"
     :class="glassClass()">
-    <h3 class="font-bold text-4xl">
+    <h3 class="font-bold text-base lg:text-2xl 2xl:text-4xl">
       {{ t('contact.thanks') }}
     </h3>
-    <p class="text-base font italic">
+    <p class="text-xs lg:text-base font italic">
       {{ t('contact.description') }}
     </p>
   </div>
 
-  <div class="portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 flex portrait:flex-col-reverse gap-8">
+  <div class="portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 flex portrait:flex-col-reverse gap-4 lg:gap-8">
     <!-- Links sociais -->
-    <div class="portrait:w-full landscape:w-1/5 flex portrait:flex-row landscape:flex-col items-center gap-4">
+    <div class="portrait:w-full landscape:w-1/5 flex portrait:flex-row landscape:flex-col portrait:justify-between items-center gap-1 lg:gap-4">
       <a v-for="link in socialLinks" :key="link.name" :href="link.href" target="_blank" rel="noopener noreferrer" class="flex h-14 items-center glass rounded-full link-hover
-           portrait:w-14 portrait:justify-center portrait:px-0
+           portrait:w-14 portrait:justify-center landscape:h-6 portrait:px-0
            landscape:w-full landscape:justify-between landscape:px-4" :class="glassClass()">
         <div class="flex gap-2 items-center">
-          <component :is="link.icon" class="w-6 portrait:w-7 landscape:w-6 shrink-0" />
+          <component :is="link.icon" class="w-6 portrait:w-7 landscape:w-4 shrink-0" />
 
           <!-- Nome só aparece no landscape -->
-          <span class="portrait:hidden landscape:flex">
+          <span class="portrait:hidden landscape:flex text-[10px]">
             {{ link.name }}
           </span>
         </div>
 
         <!-- Seta só aparece no landscape -->
-        <ArrowIcon class="portrait:hidden landscape:block shrink-0" />
+        <ArrowIcon class="portrait:hidden landscape:block shrink-0 w-2" />
       </a>
     </div>
 
     <!-- Slogan / Session -->
     <div
-      class="w-4/5 glass-think p-8 rounded-4xl flex flex-col items-center justify-center gap-6 leading-loose tracking-wider">
-      <h4 class="font-bold text-4xl">
+      class="portrait:w-full landscape:w-4/5 glass-think p-1 lg:p-8 rounded-2xl lg:rounded-4xl flex flex-col items-center justify-center gap-2 lg:gap-6 leading-loose tracking-wider">
+      <h4 class="font-bold text-sm lg:text-2xl xl:text-4xl">
         {{ t('contact.slogan1') }} •
         {{ t('contact.slogan2') }} •
         {{ t('contact.slogan3') }} •
         {{ t('contact.slogan4') }}
       </h4>
 
-      <p class="text-xl italic">
+      <p class="text-xs 2xl:text-xl italic text-center">
         {{ t('contact.slogan') }}
       </p>
 
-      <p class="text-lg">
+      <p class=" text-[10px] lg:text-lg text-center">
         {{ t('contact.session') }} • GabrielOS v1.0 • {{ t('home.local') }}
       </p>
     </div>
