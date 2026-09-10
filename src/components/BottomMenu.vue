@@ -9,15 +9,15 @@
         v-for="item in menuItems"
         :key="item.name"
         :to="item.to"
-        class="flex items-center gap-1 px-2 py-1 rounded-full transition-all duration-400 ease-in-out"
+        class="flex items-center gap-1 px-2 py-1 2xl:px-4 2xl:py-2 rounded-full transition-all duration-400 ease-in-out"
         :class="route.name === item.name 
           ? 'button-active text-white' 
           : 'text-gray-300 hover:text-white'"
       >
-        <component :is="item.icon" class="w-6 h-6 shrink-0" />
+        <component :is="item.icon" class="w-6 h-6 lg:w-8 lg:h-8 2xl:w-10 2xl:h-10 shrink-0" />
 
         <span
-          class="text-base font-medium whitespace-nowrap overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
+          class="text-base lg:text-lg 2xl:text-xl font-medium whitespace-nowrap overflow-hidden transition-all duration-400 ease-[cubic-bezier(0.4,0,0.2,1)]"
           :class="route.name === item.name 
             ? 'max-w-40 opacity-100' 
             : 'max-w-0 opacity-0'"

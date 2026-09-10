@@ -3,7 +3,7 @@
 
     <!-- Botão -->
     <button
-      class="flex items-center gap-2 glass h-10 lg:h-16 px-5 rounded-full cursor-pointer transition-all"
+      class="flex items-center gap-2 glass h-10 lg:h-12 2xl:h-16 px-5 rounded-full cursor-pointer transition-all"
       :class="glassClass()"
       @click.stop="isOpen = !isOpen"
     >

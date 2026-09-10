@@ -9,7 +9,7 @@
       <img
         :src="currentLanguage.flag"
         :alt="currentLanguage.code"
-        class="w-5 h-4 object-cover rounded-sm"
+        class="w-4 h-3 object-cover rounded-sm"
       />
       <DownIcon
         class="w-3.5 transition-transform duration-200"
@@ -35,7 +35,7 @@
         <img
           :src="lang.flag"
           :alt="lang.code"
-          class="w-5 h-4 object-cover rounded-sm"
+          class="w-4 h-3 object-cover rounded-sm"
         />
       </button>
     </div>

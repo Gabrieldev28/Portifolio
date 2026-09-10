@@ -4,12 +4,12 @@
   <div class="w-10/12 lg:w-8/12 2xl:w-10/12  lg:my-4 glass rounded-2xl lg:rounded-3xl p-2 lg:p-4 flex flex-col gap-2" :class="glassClass()">
     <!-- Topo (disponível + localização) -->
     <div class="flex justify-between h-1 p-1 lg:h-8 font-regular landscape:font-extralight lg:font-medium">
-      <span class="flex gap-1 items-center text-xs">
+      <span class="flex gap-1 items-center text-xs lg:tracking-wider">
         <DotIcon class="w-2 lg:w-4" />
-        <p class="text-[10px] lg:text-sm">{{ t('home.disponible') }}</p>
+        <p class="text-[10px] lg:text-sm 2xl:text-lg">{{ t('home.disponible') }}</p>
       </span>
-      <span class="text-[10px] lg:text-sm flex items-center gap-1">
-        <LocalIcon class="w-4" />
+      <span class="text-[10px] lg:text-sm 2xl:text-lg flex items-center gap-1 lg:tracking-wider">
+        <LocalIcon class="w-4 lg:w-6" />
         <p>{{ t('home.local') }}</p>
       </span>
     </div>
@@ -24,8 +24,8 @@
           <!-- Imagem no mobile vertical -->
           <ProfileImage class="portrait:flex landscape:hidden shrink-0" />
 
-          <div class="flex flex-1 flex-col gap-1">
-            <span class="text-sm xl:text-xl font-light">{{ t('home.hello') }}</span>
+          <div class="flex flex-1 flex-col gap-1 2xl:gap-4">
+            <span class="text-sm xl:text-xl 2xl:text-2xl font-light">{{ t('home.hello') }}</span>
             <img
               src="../assets/images/gabrielAugusto.svg"
               alt="gabriel augusto"

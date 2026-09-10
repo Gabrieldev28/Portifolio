@@ -9,12 +9,12 @@ const { glassClass } = useTheme()
 
 <template>
   <div class="w-full flex justify-center items-center min-h-screen overflow-hidden">
-    <div class="flex flex-col justify-center items-center max-w-360 w-full portrait:gap-3 landscape:gap-1 lg:gap-2 2xl:gap-6">
+    <div class="flex flex-col justify-center items-center max-w-360 w-full portrait:gap-3 landscape:gap-1 lg:gap-1 2xl:gap-6">
 
       <!-- Aqui as views vão trocar -->
       <RouterView />
 
-      <div class="flex flex-col portrait:gap-2 landscape:gap-1 xl:gap-2 2xl:gap-4">
+      <div class="flex flex-col portrait:gap-2 landscape:gap-1 xl:gap-2 2xl:gap-4 lg:mt-2">
         <BottomMenu />
         <div class="flex w-full items-center justify-center">
           

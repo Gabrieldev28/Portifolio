@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex glass flex-col p-2 2xl:p-4 gap-1 2xl:gap-2 rounded-2xl lg:rounded-3xl"
+    class="flex glass flex-col p-4 lg:p-6 gap-1 2xl:gap-2 rounded-2xl lg:rounded-3xl"
     :class="glassClass()"
   >
     <h3 class="text-base lg:text-lg 2xl:text-2xl font-medium lg:font-bold">

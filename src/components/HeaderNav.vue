@@ -5,7 +5,7 @@
 
     <!-- Path dinâmico -->
     <div
-      class="w-full lg:w-5/12 glass h-8 lg:h-16 max-h-16 p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
+      class="w-full lg:w-5/12 glass h-8 lg:h-12 2xl:h-16 max-h-16 p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
       :class="glassClass()"
     >
       <LockIcon class="w-3 lg:w-4" />
@@ -20,12 +20,12 @@
 
 
     <div
-      class="hidden lg:flex glass rounded-full px-4 gap-2 items-center max-h-16"
+      class="hidden lg:flex glass rounded-full px-4 gap-2 items-center lg:h-12 2xl:h-16 max-h-16"
       :class="glassClass()"
     >
-      <LinkedinIcon class="w-6" />
-      <GithubIcon class="w-6" />
-      <BehanceIcon class="w-6" />
+      <LinkedinIcon class="w-4 2xl:w-6" />
+      <GithubIcon class="w-4 2xl:w-6" />
+      <BehanceIcon class="w-4 2xl:w-6" />
     </div>
   </div>
 </template>
