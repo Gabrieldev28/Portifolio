@@ -1,6 +1,6 @@
 <template>
     <HeaderNav />
-    <div class="flex flex-col items-center gap-8">
+    <div class="flex flex-col items-center gap-1 lg:my-4 lg:gap-3 2xl:gap-8">
         <ProjectCards />
         <BehanceCard />
     </div>

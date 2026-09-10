@@ -1,6 +1,6 @@
 <template>
   <div
-    class="w-10/12 xl:w-8/12 2xl:w-10/12 glass p-3 lg:p-4 rounded-2xl lg:rounded-3xl"
+    class="w-10/12 lg:w-8/12 2xl:w-10/12 glass p-3 lg:p-4 rounded-2xl lg:rounded-3xl"
     :class="glassClass()"
   >
     <!-- Header -->

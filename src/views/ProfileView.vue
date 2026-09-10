@@ -1,9 +1,9 @@
 <template>
     <HeaderNav />
     <div
-        class="flex portrait:flex-col portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 justify-between gap-1 lg:gap-2 xl:gap-4">
+        class="flex portrait:flex-col portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 justify-between gap-1 lg:gap-4 2xl:gap-8 xl:my-2">
         <CertificationCard />
-        <div class="w-full landscape:w-4/6 flex flex-col gap-1 xl:gap-2 2xl:gap-4">
+        <div class="w-full landscape:w-4/6 flex flex-col gap-1 lg:gap-2 2xl:gap-4">
             <DescriptionCard />
             <ThinkCard />
         </div>

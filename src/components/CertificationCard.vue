@@ -6,7 +6,7 @@
     <div class="flex gap-2">
       <img src="../assets/images/unicesumarLogo.png" alt="Unicesumar" class="w-5 lg:w-10 h-5 lg:h-10" />
       <div class="flex flex-col gap-0">
-        <div class="flex lg:gap-2 items-center">
+        <div class="flex gap-2 items-center">
           <span class="text-xs lg:text-base 2xl:text-xl font-bold">Unicesumar</span>
           <span>•</span>
           <span class="font-extralight text-[8px] lg:text-xs">2025 ~ 2028</span>

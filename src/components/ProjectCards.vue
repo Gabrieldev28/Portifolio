@@ -1,26 +1,26 @@
 <template>
-  <div class="flex w-10/12 justify-between gap-8">
+  <div class="flex portrait:flex-col landscape:flex-row w-10/12 lg:w-8/12 2xl:w-10/12 justify-between gap-1 lg:gap-4 2xl:gap-8">
     <div
       v-for="project in projects"
       :key="project.name"
-      class="flex flex-col w-1/3 p-6 glass rounded-4xl gap-4 hover-project transition ease-in"
+      class="flex flex-col landscape:w-1/3 p-2 lg:p-4 2xl:p-6 glass rounded-2xl lg:rounded-4xl gap-1 lg:gap-2 2xl:gap-4 hover-project justify-center transition ease-in"
       :class="glassClass()"
       @click="openProject(project)"
     >
-      <div class="flex items-center gap-8">
-        <component :is="project.logo" :class="project.logoClass" />
-        <h5 class="text-3xl font-project font-light tracking-wider">
+      <div class="flex items-center gap-2 lg:gap-4 2xl:gap-8">
+        <component class="w-10 h-10 lg:w-14 lg:h-14 2xl:w-20 2xl:h-20" :is="project.logo" :class="project.logoClass" />
+        <h5 class="text-base lg:text-3xl font-project font-light tracking-wider">
           {{ project.name }}
         </h5>
       </div>
 
-      <p class="font-extralight tracking-wider text-lg">
+      <p class="font-extralight tracking-wider text-[10px] lg:text-base 2xl:text-lg">
         {{ t(project.description) }}
       </p>
 
-      <div class="flex gap-4 items-center">
-        <component :is="project.icon" />
-        <span class="font-light tracking-wider text-base">
+      <div class="flex gap-2 lg:gap-4 items-center">
+        <component :is="project.icon" class="w-4 lg:w-10" />
+        <span class="font-light tracking-wider text-xs lg:text-sm 2xl:text-base">
           {{ project.role }}
         </span>
       </div>
@@ -67,7 +67,7 @@ const projects = [
     name: 'UniLevel',
     description: 'projects.uniLevelDescription',
     logo: UnicesumarLogo,
-    logoClass: 'w-16 h-16',
+    logoClass: 'w-10 h-10 lg:w-16 lg:h-16',
     icon: AskIcon,
     role: 'UX Research',
   },
