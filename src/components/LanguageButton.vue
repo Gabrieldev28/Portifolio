@@ -4,7 +4,7 @@
     <!-- Botão -->
     <button class="flex items-center gap-2 glass h-10 lg:h-12 2xl:h-16 px-5 rounded-full cursor-pointer transition-all"
       :class="glassClass()" @click.stop="isOpen = !isOpen">
-      <img :src="currentLanguage.flag" :alt="currentLanguage.code" class="w-6 h-5 object-cover rounded-sm" />
+      <img :src="currentLanguage?.flag" :alt="currentLanguage?.code" class="w-6 h-5 object-cover rounded-sm" />
 
       <DownIcon class="w-4 transition-transform duration-200" :class="iconRotation" />
     </button>

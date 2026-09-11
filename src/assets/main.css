@@ -180,3 +180,14 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
+.icon-gradient {
+  transition: all 0.3s ease;
+}
+
+.icon-gradient:hover {
+  background: linear-gradient(180deg, #42A4FF 0%, #1877D0 50%, #205F99 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}

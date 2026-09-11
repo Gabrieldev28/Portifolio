@@ -6,26 +6,34 @@
     <!-- Path dinâmico -->
     <div
       class="w-full lg:w-5/12 glass h-8 lg:h-12 2xl:h-16 max-h-16 p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
-      :class="glassClass()"
-    >
+      :class="glassClass()">
       <LockIcon class="w-3 lg:w-4" />
       <span class="font-semibold text-xs lg:text-sm">
-        GabrielOS.io{{ currentPath }}
+        GabrielOS.dev{{ currentPath }}
       </span>
     </div>
     <div class="hidden lg:flex">
-        <LanguageButton />
+      <LanguageButton />
     </div>
 
 
 
-    <div
-      class="hidden lg:flex glass rounded-full px-4 gap-2 items-center lg:h-12 2xl:h-16 max-h-16"
-      :class="glassClass()"
-    >
-      <LinkedinIcon class="w-4 2xl:w-6" />
-      <GithubIcon class="w-4 2xl:w-6" />
-      <BehanceIcon class="w-4 2xl:w-6" />
+    <div class="hidden lg:flex glass rounded-full px-3 gap-1 items-center lg:h-12 2xl:h-16 max-h-16"
+      :class="glassClass()">
+      <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer"
+        class="p-2 rounded-full hover:scale-110 transition-transform duration-300">
+        <LinkedinIcon class="w-4 2xl:w-6 icon-gradient" />
+      </a>
+
+      <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer"
+        class="p-2 rounded-full hover:scale-110 transition-transform duration-300">
+        <GithubIcon class="w-4 2xl:w-6 icon-gradient" />
+      </a>
+
+      <a href="https://www.behance.net/seu-usuario" target="_blank" rel="noopener noreferrer"
+        class="p-2 rounded-full hover:scale-110 transition-transform duration-300">
+        <BehanceIcon class="w-4 2xl:w-6 icon-gradient" />
+      </a>
     </div>
   </div>
 </template>

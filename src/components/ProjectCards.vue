@@ -29,24 +29,31 @@
 
   <!-- Modal do projeto Nitro -->
   <NitroModal v-model:open="showNitroModal" />
+  <LumeaModal v-model:open="showLumeaModal" />
+
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+
 import AskIcon from '@/components/icons/AskIcon.vue'
 import CubeIcon from '@/components/icons/CubeIcon.vue'
 import LumeaLogo from '@/components/icons/LumeaLogo.vue'
 import NitroLogo from '@/components/icons/NitroLogo.vue'
 import PencilIcon from '@/components/icons/PencilIcon.vue'
 import UnicesumarLogo from '@/components/icons/UnicesumarLogo.vue'
+
 import NitroModal from './NitroModal.vue'
+import LumeaModal from './LumeaModal.vue'
+
 import { useTheme } from '@/composables/useTheme'
 
 const { t } = useI18n()
 const { glassClass } = useTheme()
 
 const showNitroModal = ref(false)
+const showLumeaModal = ref(false)
 
 const projects = [
   {
@@ -76,11 +83,12 @@ const projects = [
 function openProject(project: { name: string }) {
   if (project.name === 'Nitro') {
     showNitroModal.value = true
+  } else if (project.name === 'Lumea') {
+    showLumeaModal.value = true
   }
-  // Depois você pode adicionar os outros projetos aqui
-  // else if (project.name === 'Lumea') { ... }
 }
 </script>
+
 
 <style>
 .hover-project:hover {
