@@ -1,7 +1,8 @@
 <template>
   <HeaderNav />
 
-  <div class="w-10/12 lg:w-8/12 2xl:w-10/12  lg:my-4 glass rounded-2xl lg:rounded-3xl p-2 lg:p-4 flex flex-col gap-2" :class="glassClass()">
+  <div class="relative w-10/12 lg:w-8/12 2xl:w-10/12  lg:my-4 glass rounded-2xl lg:rounded-3xl p-2 lg:p-4 flex flex-col gap-2"
+    :class="glassClass()" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
     <!-- Topo (disponível + localização) -->
     <div class="flex justify-between h-1 p-1 lg:h-8 font-regular landscape:font-extralight lg:font-medium">
       <span class="flex gap-1 items-center text-xs lg:tracking-wider">
@@ -26,12 +27,10 @@
 
           <div class="flex flex-1 flex-col gap-1 2xl:gap-4">
             <span class="text-sm xl:text-xl 2xl:text-2xl font-light">{{ t('home.hello') }}</span>
-            <img
-              src="../assets/images/gabrielAugusto.svg"
-              alt="gabriel augusto"
-              class="w-full landscape:w-2/6 lg:w-2/4 2xl:w-3/4"
-            />
-            <div class="flex w-full text-sm lg:text-lg xl:text-2xl gap-1 lg:gap-4 italic font-extralight lg:font-normal">
+            <img src="../assets/images/gabrielAugusto.svg" alt="gabriel augusto"
+              class="w-full landscape:w-2/6 lg:w-2/4 2xl:w-3/4" />
+            <div
+              class="flex w-full text-sm lg:text-lg xl:text-2xl gap-1 lg:gap-4 italic font-extralight lg:font-normal">
               <span>{{ t('home.design') }}</span>
               <span>•</span>
               <span>{{ t('home.developer') }}</span>
@@ -39,7 +38,8 @@
           </div>
         </div>
 
-        <p class="w-full text-[10px] lg:text-base 2xl:text-xl font-extralight p-1 leading-3 lg:leading-5 2xl:leading-loose">
+        <p
+          class="w-full text-[10px] lg:text-base 2xl:text-xl font-extralight p-1 leading-3 lg:leading-5 2xl:leading-loose">
           {{ t('home.description') }}
         </p>
       </div>
@@ -47,7 +47,7 @@
   </div>
 
   <SkillsCard />
-  <ExpandCard class="portrait:flex-col landscape:hidden"/>
+  <ExpandCard class="portrait:flex-col landscape:hidden" />
 </template>
 
 <script lang="ts" setup>

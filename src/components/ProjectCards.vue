@@ -5,7 +5,7 @@
       :key="project.name"
       class="flex flex-col landscape:w-1/3 p-2 lg:p-4 2xl:p-6 glass rounded-2xl lg:rounded-4xl gap-1 lg:gap-2 2xl:gap-4 hover-project justify-center transition ease-in"
       :class="glassClass()"
-      @click="openProject(project)"
+      @click="openProject(project)" data-aos="fade-right"
     >
       <div class="flex items-center gap-2 lg:gap-4 2xl:gap-8">
         <component class="w-10 h-10 lg:w-14 lg:h-14 2xl:w-20 2xl:h-20" :is="project.logo" :class="project.logoClass" />

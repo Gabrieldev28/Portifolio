@@ -1,14 +1,14 @@
 <template>
     <HeaderNav />
     <div
-        class="flex portrait:flex-col portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 justify-between gap-1 lg:gap-4 2xl:gap-8 xl:my-2">
+        class="flex portrait:flex-col portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 justify-between gap-1 lg:gap-4 2xl:gap-8 xl:my-2" data-aos="fade-right">
         <CertificationCard />
         <div class="w-full landscape:w-4/6 flex flex-col gap-1 lg:gap-2 2xl:gap-4">
             <DescriptionCard />
             <ThinkCard />
         </div>
     </div>
-    <div class="portrait:w-8/12 landscape:w-8/12 2xl:w-10/12 portrait:hidden landscape:hidden lg:flex">
+    <div class="portrait:w-8/12 landscape:w-8/12 2xl:w-10/12 portrait:hidden landscape:hidden lg:flex" data-aos="fade-right">
         <SloganCard />
     </div>
 

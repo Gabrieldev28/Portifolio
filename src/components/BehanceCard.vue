@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col glass rounded-2xl lg:rounded-3xl 2xl:rounded-4xl p-3 lg:p-4 2xl:p-8 w-10/12 lg:w-8/12 2xl:w-10/12 " :class="glassClass()">
+  <div class="flex flex-col glass rounded-2xl lg:rounded-3xl 2xl:rounded-4xl p-3 lg:p-4 2xl:p-8 w-10/12 lg:w-8/12 2xl:w-10/12 " :class="glassClass()" data-aos="fade-right">
     <p class="font-extralight tracking-widest text-[10px] lg:text-base 2xl:text-lg italic leading-3 lg:leading-normal 2xl:leading-loose">
       {{ t('projects.projectsDescription') }}
     </p>

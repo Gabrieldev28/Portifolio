@@ -1,7 +1,7 @@
 <template>
   <div 
     class="w-10/12 text-center py-6 px-4 rounded-2xl glass"
-    :class="glassClass()"
+    :class="glassClass()" data-aos="zoom-in"
   >
     <h4 class="font-bold text-lg">
       {{ t('home.expand') }}

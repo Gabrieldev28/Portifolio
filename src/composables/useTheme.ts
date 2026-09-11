@@ -1,5 +1,6 @@
 // composables/useTheme.ts
-import { ref, watch, onMounted } from 'vue'
+import { ref, watch, onMounted, nextTick } from 'vue'
+import AOS from 'aos'   // ← adicione isso
 
 type Theme = 'light' | 'dark'
 
@@ -14,15 +15,17 @@ export function useTheme() {
     theme.value = value
   }
 
-  // Classe que você usa nos elementos
   const glassClass = () => {
     return theme.value === 'light' ? 'glass-light' : 'glass-dark'
   }
 
-  // Aplica a classe no <html> (útil se quiser usar depois com dark: do Tailwind)
-  watch(theme, (newTheme) => {
+  watch(theme, async (newTheme) => {
     document.documentElement.classList.toggle('dark', newTheme === 'dark')
     localStorage.setItem('theme', newTheme)
+
+    // Espera o DOM atualizar e força o AOS a manter os elementos já animados
+    await nextTick()
+    AOS.refreshHard()
   }, { immediate: true })
 
   onMounted(() => {
@@ -30,7 +33,6 @@ export function useTheme() {
     if (saved) {
       theme.value = saved
     } else {
-      // Detecta preferência do sistema
       const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
       theme.value = prefersDark ? 'dark' : 'light'
     }

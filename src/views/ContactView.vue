@@ -2,7 +2,7 @@
   <HeaderNav />
   <div class="flex flex-col items-center">
     <div
-      class="portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 flex flex-col rounded-2xl lg:rounded-3xl 2xl:rounded-4xl glass p-2 lg:p-4 2xl:p-8 leading-loose tracking-wider portrait:gap-2 landscape:gap-0 lg:gap-2 2xl:gap-6 my-2 lg:my-4"
+      class="portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 flex flex-col rounded-2xl lg:rounded-3xl 2xl:rounded-4xl glass p-2 lg:p-4 2xl:p-8 leading-loose tracking-wider portrait:gap-2 landscape:gap-0 lg:gap-2 2xl:gap-6 my-2 lg:my-4" data-aos="zoom-in"
       :class="glassClass()">
       <h3 class="font-bold text-base lg:text-2xl 2xl:text-4xl">
         {{ t('contact.thanks') }}
@@ -12,14 +12,14 @@
       </p>
     </div>
 
-    <div class="portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 flex portrait:flex-col-reverse gap-4 lg:gap-8">
+    <div class="portrait:w-10/12 landscape:w-10/12 lg:w-8/12 2xl:w-10/12 flex portrait:flex-col-reverse gap-4 lg:gap-8" >
       <!-- Links sociais -->
       <div
         class="portrait:w-full landscape:w-1/5 flex portrait:flex-row landscape:flex-col portrait:justify-between items-center gap-1 lg:gap-2 2xl:gap-4">
         <a v-for="link in socialLinks" :key="link.name" :href="link.href" target="_blank" rel="noopener noreferrer"
           class="flex h-14 items-center glass rounded-full link-hover
            portrait:w-14 portrait:justify-center landscape:h-6 lg:h-10 2xl:h-12 portrait:px-0
-           landscape:w-full landscape:justify-between landscape:px-4" :class="glassClass()">
+           landscape:w-full landscape:justify-between landscape:px-4" :class="glassClass()"  data-aos="zoom-in">
           <div class="flex gap-2 items-center">
             <component :is="link.icon" class="w-6 portrait:w-7 landscape:w-4 lg:w-6 shrink-0" />
 
@@ -36,7 +36,7 @@
 
       <!-- Slogan / Session -->
       <div
-        class="portrait:w-full landscape:w-4/5 glass-think p-1 lg:p-4 2xl:p-8 rounded-2xl lg:rounded-4xl flex flex-col items-center justify-center gap-2 lg:gap-6 leading-loose tracking-wider">
+        class="portrait:w-full landscape:w-4/5 glass-think p-1 lg:p-4 2xl:p-8 rounded-2xl lg:rounded-4xl flex flex-col items-center justify-center gap-2 lg:gap-6 leading-loose tracking-wider" data-aos="zoom-in">
         <h4 class="font-bold text-sm lg:text-2xl 2xl:text-4xl">
           {{ t('contact.slogan1') }} •
           {{ t('contact.slogan2') }} •
@@ -73,10 +73,10 @@ const { glassClass } = useTheme()
 
 const socialLinks = [
   { name: 'Behance', href: 'https://www.behance.net/gabriel-ui-ux', icon: BehanceIcon },
-  { name: 'GitHub', href: 'https://github.com/seu-usuario', icon: GithubIcon },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/seu-perfil', icon: LinkedinIcon },
-  { name: 'Email', href: 'mailto:seuemail@exemplo.com', icon: EmailIcon },
-  { name: 'WhatsApp', href: 'https://wa.me/5511999999999', icon: WhatsappIcon },
+  { name: 'GitHub', href: 'https://https://github.com/Gabrieldev28', icon: GithubIcon },
+  { name: 'LinkedIn', href: 'https://www.linkedin.com/in/gabrielaugustodacosta28/', icon: LinkedinIcon },
+  { name: 'Email', href: 'mailto:gabrieldev28@gmail.com', icon: EmailIcon },
+  { name: 'WhatsApp', href: 'https://wa.me/5511983796012', icon: WhatsappIcon },
 ]
 </script>
 

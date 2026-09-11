@@ -1,31 +1,48 @@
 <script setup lang="ts">
+import { ref, onMounted } from 'vue'
 import BottomMenu from '@/components/BottomMenu.vue'
 import { useTheme } from '@/composables/useTheme'
-import ThemeToggle from './components/ThemeToggle.vue';
-import LanguageMobileButton from './components/LanguageMobileButton.vue';
+import ThemeToggle from './components/ThemeToggle.vue'
+import LanguageMobileButton from './components/LanguageMobileButton.vue'
+import IntroVision from './components/IntroVision.vue'
 
 const { glassClass } = useTheme()
+
+const showIntro = ref(true)
+
+onMounted(() => {
+  // Se já viu nessa sessão, não mostra a intro
+  if (sessionStorage.getItem('vision-intro-played')) {
+    showIntro.value = false
+  }
+})
 </script>
 
 <template>
-  <div class="w-full flex justify-center items-center min-h-screen overflow-hidden">
-    <div class="flex flex-col justify-center items-center max-w-360 w-full portrait:gap-3 landscape:gap-1 lg:gap-1 2xl:gap-6">
+  <!-- ========== INTRO ========== -->
+  <IntroVision v-if="showIntro" @finished="showIntro = false" />
 
-      <!-- Aqui as views vão trocar -->
+  <!-- ========== SITE (sempre renderizado) ========== -->
+  <div class="w-full flex justify-center items-center min-h-screen overflow-hidden">
+    <div
+      class="flex flex-col justify-center items-center max-w-360 w-full portrait:gap-3 landscape:gap-1 lg:gap-1 2xl:gap-6">
+
       <RouterView />
 
       <div class="flex flex-col portrait:gap-2 landscape:gap-1 xl:gap-2 2xl:gap-4 lg:mt-2">
         <BottomMenu />
         <div class="flex w-full items-center justify-center">
-          
-          <div class="flex lg:hidden"><ThemeToggle /></div>
-          
+          <div class="flex lg:hidden">
+            <ThemeToggle />
+          </div>
 
           <p class="p-4 glass rounded-full italic font-extralight text-[10px] text-center" :class="glassClass()">
             Designed & Engineered by Gabriel • 2026
           </p>
-          <div class="flex lg:hidden"><LanguageMobileButton /></div>
-          
+
+          <div class="flex lg:hidden">
+            <LanguageMobileButton />
+          </div>
         </div>
       </div>
     </div>

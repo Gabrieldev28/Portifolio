@@ -2,45 +2,21 @@
   <div class="relative shrink-0 h-10" ref="dropdownRef">
 
     <!-- Botão -->
-    <button
-      class="flex items-center gap-2 glass h-10 lg:h-12 2xl:h-16 px-5 rounded-full cursor-pointer transition-all"
-      :class="glassClass()"
-      @click.stop="isOpen = !isOpen"
-    >
-      <img
-        :src="currentLanguage.flag"
-        :alt="currentLanguage.code"
-        class="w-6 h-5 object-cover rounded-sm"
-      />
+    <button class="flex items-center gap-2 glass h-10 lg:h-12 2xl:h-16 px-5 rounded-full cursor-pointer transition-all"
+      :class="glassClass()" @click.stop="isOpen = !isOpen">
+      <img :src="currentLanguage.flag" :alt="currentLanguage.code" class="w-6 h-5 object-cover rounded-sm" />
 
-      <DownIcon
-        class="w-4 transition-transform duration-200"
-        :class="iconRotation"
-      />
+      <DownIcon class="w-4 transition-transform duration-200" :class="iconRotation" />
     </button>
 
     <!-- Dropdown -->
-    <div
-      v-show="isOpen"
-      class="absolute right-0 z-50
-             glass rounded-3xl p-1 min-w-12
-             flex flex-col gap-1 shadow-xl"
-      :class="[glassClass(), dropdownPosition]"
-    >
-      <button
-        v-for="lang in languages"
-        :key="lang.code"
-        class="flex items-center self-center justify-center
+    <div v-show="isOpen" class="absolute right-0 z-[9999]
+         glass rounded-3xl p-1 min-w-12
+         flex flex-col gap-1 shadow-xl" :class="[glassClass(), dropdownPosition]">
+      <button v-for="lang in languages" :key="lang.code" class="flex items-center self-center justify-center
                w-10 h-10 rounded-full transition-all
-               hover:bg-white/10"
-        :class="{ 'bg-white/15': lang.code === locale }"
-        @click="selectLanguage(lang.code)"
-      >
-        <img
-          :src="lang.flag"
-          :alt="lang.code"
-          class="w-6 h-5 object-cover rounded-sm"
-        />
+               hover:bg-white/10" :class="{ 'bg-white/15': lang.code === locale }" @click="selectLanguage(lang.code)">
+        <img :src="lang.flag" :alt="lang.code" class="w-6 h-5 object-cover rounded-sm" />
       </button>
     </div>
 

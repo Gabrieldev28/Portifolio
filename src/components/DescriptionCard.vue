@@ -1,5 +1,5 @@
 <template>
-  <div class="relative p-2 lg:p-4 glass rounded-xl lg:rounded-3xl" :class="glassClass()">
+  <div class="relative p-2 lg:p-4 glass rounded-xl lg:rounded-3xl" :class="glassClass()" data-aos="fade-right">
     <!-- Área scrollável com no máximo 5 linhas -->
     <div
       class="overflow-y-auto portrait:h-16 landscape:h-16 lg:h-20 2xl:h-28.5

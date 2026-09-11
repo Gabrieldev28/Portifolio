@@ -12,36 +12,36 @@
 
         <!-- Modal em si -->
         <div
-          class="max-w-360 relative w-10/12 max-h-[75vh] rounded-4xl project-glass flex flex-col overflow-hidden scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent"
+          class="max-w-360 relative w-10/12 max-h-[80vh] rounded-3xl lg:rounded-4xl project-glass flex flex-col overflow-hidden scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent"
           @click.stop
         >
           <!-- Header fixo -->
-          <div class="flex justify-between items-center p-5 border-b border-b-white/20 shrink-0">
+          <div class="flex justify-between items-center px-6 py-3 border-b border-b-white/20 shrink-0">
             <div class="flex gap-2 items-center">
-              <h3 class="font-semibold text-xl">Nitro •</h3>
-              <span>UI/UX e Flutter</span>
+              <h3 class="font-semibold text-sm lg:text-base 2xl:text-xl">Nitro •</h3>
+              <span class="text-sm lg:text-base 2xl:text-xl">UI/UX e Flutter</span>
             </div>
             <button @click="close" class="hover:opacity-70 transition-opacity">
-              <CloseIcon />
+              <CloseIcon class="w-2 lg:w-6" />
             </button>
           </div>
 
           <!-- Conteúdo com scroll interno -->
           <div class="overflow-y-auto flex-1">
             <!-- Todo o conteúdo que você já tinha -->
-            <div class="flex px-20 py-10 items-center gap-12">
+            <div class="flex px-8 lg:px-20 py-4 lg:py-10 items-center gap-4 lg:gap-12">
               <NitroLogoMedium />
-              <div class="flex flex-col gap-4 tracking-wider">
+              <div class="flex flex-col gap-2 lg:gap-4 tracking-wider">
                 <div class="flex gap-2 items-center">
-                  <h4 class="text-3xl font-bold">Nitro •</h4>
-                  <span class="text-3xl italic font-extralight">2023 - Atual</span>
+                  <h4 class="text-sm lg:text-xl 2xl:text-3xl font-bold">Nitro •</h4>
+                  <span class="text-sm lg:text-xl 2xl:text-3xl italic font-extralight">2023 - Atual</span>
                 </div>
-                <p class="text-2xl italic font-extralight">Da ideia inicial a um ecossistema de produto</p>
+                <p class="portrait:text-[10px] landscape:text-lg lg:text-xl 2xl:text-2xl italic font-extralight">Da ideia inicial a um ecossistema de produto</p>
               </div>
             </div>
 
-            <div class="flex justify-between items-center gap-8 px-20">
-              <div class="flex flex-col gap-4 leading-loose tracking-wider font-extralight">
+            <div class="flex portrait:flex-col justify-between items-center gap-8 px-8 lg:px-20">
+              <div class="flex flex-col gap-2 lg:gap-4 text-xs lg:text-base lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight">
                 <p>A Nitro nasceu em 2023 como um projeto pessoal para unir comunidade automotiva, conteúdo e identidade
                   em um único lugar. O que começou como um exercício de programação acabou se tornando o projeto onde
                   desenvolvi minha forma de pensar como designer de produto.</p>
@@ -50,26 +50,26 @@
                   processo que aprendi UI/UX, arquitetura de informação, design systems, branding, Flutter e
                   pensamento de produto.</p>
               </div>
-              <img src="../assets/images/mockNitro.png" alt="">
+              <img src="../assets/images/mockNitro.png" alt="celular mockup1" class="portrait: w-2/4 landscape:w-1/4" >
             </div>
 
-            <div class="flex flex-col px-20 leading-loose tracking-wider font-extralight gap-8">
-              <h4 class="text-3xl font-bold">A identidade da Nitro</h4>
+            <div class="flex flex-col px-8 lg:px-20 lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight gap-2 lg:gap-8 text-xs lg:text-base">
+              <h4 class="text-base lg:text-3xl font-bold">A identidade da Nitro</h4>
               <p>O nome Nitro foi escolhido como uma metáfora para o próprio nitro automotivo: o impulso extra usado
                 quando é preciso ir além. A ideia sempre foi representar movimento, evolução e a busca constante por
                 algo maior.</p>
               <p>A primeira identidade visual foi construída com dois triângulos formando um “N” de maneira subliminar. A
                 execução ainda era simples, mas a intenção já existia: criar uma marca que transmitisse direção sem
                 recorrer aos símbolos mais óbvios do universo automotivo.</p>
-              <div class="flex justify-around items-center p-8">
+              <div class="flex portrait:flex-col landscape:flex-row justify-around items-center p-0 lg:p-8">
                 <NitroOldIcon />
-                <div class="flex flex-col gap-4">
+                <div class="flex flex-col gap-2 lg:gap-4">
                   <p>As cores permaneceram as mesmas desde o início: </p>
-                  <div class="flex items-center gap-4">
+                  <div class="flex items-center gap-2 lg:gap-4">
                     <DotRedIcon />
                     <span>Vermelho, representando paixão e energia.</span>
                   </div>
-                  <div class="flex items-center gap-4">
+                  <div class="flex items-center gap-2 lg:gap-4">
                     <DotPurpleIcon />
                     <span>Roxo, representando criatividade e experimentação.</span>
                   </div>
@@ -82,8 +82,8 @@
                 produto.</p>
             </div>
 
-            <div class="flex flex-col px-20 py-8 gap-8 leading-loose tracking-wider font-extralight">
-              <h4 class="text-3xl font-bold">O que a Nitro representa hoje</h4>
+            <div class="flex flex-col px-8 lg:px-20 py-8 gap-4 lg:gap-8 lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight  text-xs lg:text-base">
+              <h4 class="text-base lg:text-3xl font-bold">O que a Nitro representa hoje</h4>
               <p>Ao longo dos anos, o projeto foi remodelado diversas vezes. A maior mudança aconteceu quando percebi que
                 o problema não era apenas compartilhar carros, mas conectar pessoas, serviços, eventos e experiências
                 dentro do mesmo ecossistema.</p>
@@ -98,12 +98,12 @@
               </div>
             </div>
 
-            <div class="flex flex-col px-20 py-12 gap-8 leading-loose tracking-wider font-extralight">
-              <h4 class="text-3xl font-bold">Explore a evolução completa da Nitro</h4>
+            <div class="flex flex-col px-8 lg:px-20 py-4 lg:py-8 gap-4 lg:gap-8 lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight  text-xs lg:text-base">
+              <h4 class="text-base lg:text-3xl font-bold">Explore a evolução completa da Nitro</h4>
               <p>Este modal apresenta um resumo da trajetória do projeto. Você pode explorar wireframes, versões
                 anteriores, decisões de produto e a evolução completa da Nitro acessando o case no Behance.</p>
               <a href="https://www.behance.net/gabriel-ui-ux" target="_blank" rel="noopener noreferrer"
-                class="flex text-lg font-medium p-3 border-2 border-white/60 rounded-full self-end items-center hover:scale-105 transition-transform">
+                class="flex text-xs lg:text-lg font-medium p-1 lg:p-3 border-2 border-white/60 rounded-full self-end items-center hover:scale-105 transition-transform">
                 Abrir case completo
               </a>
             </div>
