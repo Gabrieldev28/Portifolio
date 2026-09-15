@@ -15,6 +15,9 @@ export default defineConfig({
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     }, 
   },
+  css: {
+    transformer: 'postcss', // ← evita o Lightning CSS
+  },
   build: {
     cssMinify: 'esbuild', // ← isso resolve
   },
