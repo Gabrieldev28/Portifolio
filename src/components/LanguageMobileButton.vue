@@ -7,8 +7,8 @@
       @click.stop="isOpen = !isOpen"
     >
       <img
-        :src="currentLanguage?.flag"
-        :alt="currentLanguage?.code"
+        :src="currentLanguage.flag"
+        :alt="currentLanguage.code"
         class="w-4 h-3 object-cover rounded-sm"
       />
       <DownIcon
@@ -17,7 +17,7 @@
       />
     </button>
 
-    <!-- Dropdown (forçado para absolute + abre para cima) -->
+    <!-- Dropdown -->
     <div
       v-show="isOpen"
       class="!absolute right-0 bottom-full mb-2 z-50
