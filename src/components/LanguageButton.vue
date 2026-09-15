@@ -2,21 +2,45 @@
   <div class="relative shrink-0 h-10" ref="dropdownRef">
 
     <!-- Botão -->
-    <button class="flex items-center gap-2 glass h-10 lg:h-12 2xl:h-16 px-5 rounded-full cursor-pointer transition-all"
-      :class="glassClass()" @click.stop="isOpen = !isOpen">
-      <img :src="currentLanguage?.flag" :alt="currentLanguage?.code" class="w-6 h-5 object-cover rounded-sm" />
+    <button
+      class="flex items-center gap-2 glass h-10 lg:h-12 2xl:h-16 px-5 rounded-full cursor-pointer transition-all"
+      :class="glassClass()"
+      @click.stop="isOpen = !isOpen"
+    >
+      <img
+        :src="currentLanguage.flag"
+        :alt="currentLanguage.code"
+        class="w-6 h-5 object-cover rounded-sm"
+      />
 
-      <DownIcon class="w-4 transition-transform duration-200" :class="iconRotation" />
+      <DownIcon
+        class="w-4 transition-transform duration-200"
+        :class="iconRotation"
+      />
     </button>
 
     <!-- Dropdown -->
-    <div v-show="isOpen" class="absolute right-0 z-[9999]
+    <div
+      v-show="isOpen"
+      class="absolute right-0 z-[9999]
          glass rounded-3xl p-1 min-w-12
-         flex flex-col gap-1 shadow-xl" :class="[glassClass(), dropdownPosition]">
-      <button v-for="lang in languages" :key="lang.code" class="flex items-center self-center justify-center
+         flex flex-col gap-1 shadow-xl"
+      :class="[glassClass(), dropdownPosition]"
+    >
+      <button
+        v-for="lang in languages"
+        :key="lang.code"
+        class="flex items-center self-center justify-center
                w-10 h-10 rounded-full transition-all
-               hover:bg-white/10" :class="{ 'bg-white/15': lang.code === locale }" @click="selectLanguage(lang.code)">
-        <img :src="lang.flag" :alt="lang.code" class="w-6 h-5 object-cover rounded-sm" />
+               hover:bg-white/10"
+        :class="{ 'bg-white/15': lang.code === locale }"
+        @click="selectLanguage(lang.code)"
+      >
+        <img
+          :src="lang.flag"
+          :alt="lang.code"
+          class="w-6 h-5 object-cover rounded-sm"
+        />
       </button>
     </div>
 
@@ -44,7 +68,15 @@ const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 const isMobile = ref(false)
 
-const languages = [
+// Tipagem forte
+type LanguageCode = 'pt' | 'en' | 'es' | 'fr' | 'de' | 'ru'
+
+interface Language {
+  code: LanguageCode
+  flag: string
+}
+
+const languages: Language[] = [
   { code: 'pt', flag: BrazilFlag },
   { code: 'en', flag: USFlag },
   { code: 'es', flag: SpainFlag },
@@ -53,8 +85,8 @@ const languages = [
   { code: 'ru', flag: RussiaFlag },
 ]
 
-const currentLanguage = computed(() => {
-  return languages.find((lang) => lang.code === locale.value) || languages[0]
+const currentLanguage = computed<Language>(() => {
+  return languages.find((lang) => lang.code === locale.value) ?? languages[0]!
 })
 
 // Posição do dropdown
@@ -74,7 +106,7 @@ const iconRotation = computed(() => {
   return isOpen.value ? 'rotate-180' : ''
 })
 
-function selectLanguage(code: string) {
+function selectLanguage(code: LanguageCode) {
   locale.value = code
   localStorage.setItem('lang', code)
   isOpen.value = false
@@ -91,7 +123,8 @@ function checkScreenSize() {
 }
 
 onMounted(() => {
-  const saved = localStorage.getItem('lang')
+  const saved = localStorage.getItem('lang') as LanguageCode | null
+
   if (saved && languages.some((lang) => lang.code === saved)) {
     locale.value = saved
   }

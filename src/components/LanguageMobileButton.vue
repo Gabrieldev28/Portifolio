@@ -7,8 +7,8 @@
       @click.stop="isOpen = !isOpen"
     >
       <img
-        :src="currentLanguage?.flag"
-        :alt="currentLanguage?.code"
+        :src="currentLanguage.flag"
+        :alt="currentLanguage.code"
         class="w-4 h-3 object-cover rounded-sm"
       />
       <DownIcon
@@ -61,7 +61,15 @@ const { locale } = useI18n()
 const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 
-const languages = [
+// Tipagem forte
+type LanguageCode = 'pt' | 'en' | 'es' | 'fr' | 'de' | 'ru'
+
+interface Language {
+  code: LanguageCode
+  flag: string
+}
+
+const languages: Language[] = [
   { code: 'pt', flag: BrazilFlag },
   { code: 'en', flag: USFlag },
   { code: 'es', flag: SpainFlag },
@@ -70,11 +78,11 @@ const languages = [
   { code: 'ru', flag: RussiaFlag },
 ]
 
-const currentLanguage = computed(() => {
-  return languages.find((lang) => lang.code === locale.value) || languages[0]
+const currentLanguage = computed<Language>(() => {
+  return languages.find((lang) => lang.code === locale.value) ?? languages[0]!
 })
 
-function selectLanguage(code: string) {
+function selectLanguage(code: LanguageCode) {
   locale.value = code
   localStorage.setItem('lang', code)
   isOpen.value = false
@@ -87,10 +95,12 @@ function handleClickOutside(event: MouseEvent) {
 }
 
 onMounted(() => {
-  const saved = localStorage.getItem('lang')
+  const saved = localStorage.getItem('lang') as LanguageCode | null
+
   if (saved && languages.some((lang) => lang.code === saved)) {
     locale.value = saved
   }
+
   document.addEventListener('click', handleClickOutside)
 })
 
