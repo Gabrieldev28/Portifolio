@@ -7,8 +7,8 @@
       @click.stop="isOpen = !isOpen"
     >
       <img
-        :src="currentLanguage?.flag"
-        :alt="currentLanguage?.code"
+        :src="currentLanguage!.flag"
+        :alt="currentLanguage!.code"
         class="w-4 h-3 object-cover rounded-sm"
       />
       <DownIcon
