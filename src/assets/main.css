@@ -13,10 +13,9 @@
 @theme {
   --font-brand: "Dune Rise", sans-serif;
   --font-sans: "Satoshi", sans-serif;
-  --font-project : "Sansation", sans-serif;
+  --font-project: "Sansation", sans-serif;
   --breakpoint-portrait: (orientation: portrait);
   --breakpoint-landscape: (orientation: landscape);
-
 }
 
 :root {
@@ -46,7 +45,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll; /* alterado de fixed para scroll */
 }
 
 /* ======================
@@ -54,10 +53,10 @@ body {
 ====================== */
 .glass {
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */ /* removido temporariamente para testar */
 
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
 
   box-shadow: 2px 2px 25px rgb(0 0 0 / 0.25);
 
@@ -175,11 +174,12 @@ body {
     rgba(24, 119, 208, 0.3),
     rgba(32, 95, 153, 0.3)
   );
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
 }
+
 .icon-gradient {
   transition: all 0.3s ease;
 }
