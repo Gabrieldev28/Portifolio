@@ -7,8 +7,8 @@
       @click.stop="isOpen = !isOpen"
     >
       <img
-        :src="currentLanguage.flag"
-        :alt="currentLanguage.code"
+        :src="currentLanguage?.flag"
+        :alt="currentLanguage?.code"
         class="w-4 h-3 object-cover rounded-sm"
       />
       <DownIcon
@@ -44,6 +44,7 @@
 
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
+import type { ComputedRef } from 'vue'
 import { useI18n } from 'vue-i18n'
 import DownIcon from './icons/DownIcon.vue'
 import { useTheme } from '@/composables/useTheme'
@@ -61,7 +62,6 @@ const { locale } = useI18n()
 const isOpen = ref(false)
 const dropdownRef = ref<HTMLElement | null>(null)
 
-// Tipagem forte
 type LanguageCode = 'pt' | 'en' | 'es' | 'fr' | 'de' | 'ru'
 
 interface Language {
@@ -78,9 +78,9 @@ const languages: Language[] = [
   { code: 'ru', flag: RussiaFlag },
 ]
 
-const currentLanguage = computed<Language>(() => {
-  return languages.find((lang) => lang.code === locale.value) ?? languages[0]!
-})
+const currentLanguage = computed(() => {
+  return languages.find((lang) => lang.code === locale.value) ?? languages[0]
+}) as ComputedRef<Language>
 
 function selectLanguage(code: LanguageCode) {
   locale.value = code
