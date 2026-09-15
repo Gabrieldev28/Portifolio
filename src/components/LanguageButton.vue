@@ -8,8 +8,8 @@
       @click.stop="isOpen = !isOpen"
     >
       <img
-        :src="currentLanguage.flag"
-        :alt="currentLanguage.code"
+        :src="currentLanguage?.flag"
+        :alt="currentLanguage?.code"
         class="w-6 h-5 object-cover rounded-sm"
       />
 
