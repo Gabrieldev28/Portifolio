@@ -4,8 +4,9 @@
     <ThemeToggle class="hidden lg:flex" />
 
     <!-- Path dinâmico -->
-    <div class="w-full lg:w-5/12 h-8 lg:h-12 2xl:h-16 max-h-16 p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full
-         bg-white/10 backdrop-blur-md border border-white/20" :class="glassClass()">
+    <div
+      class="w-full lg:w-5/12 glass h-8 lg:h-12 2xl:h-16 max-h-16 p-2 lg:p-1 flex gap-4 justify-center items-center rounded-full"
+      :class="glassClass()">
       <LockIcon class="w-3 lg:w-4" />
       <span class="font-semibold text-xs lg:text-sm">
         GabrielOS.dev{{ currentPath }}
