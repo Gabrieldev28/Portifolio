@@ -20,17 +20,17 @@
 
     <div class="hidden lg:flex glass rounded-full px-3 gap-1 items-center lg:h-12 2xl:h-16 max-h-16"
       :class="glassClass()">
-      <a href="https://www.linkedin.com/in/seu-usuario" target="_blank" rel="noopener noreferrer"
+      <a href="https://www.linkedin.com/in/gabrielaugustodacosta28/" target="_blank" rel="noopener noreferrer"
         class="p-2 rounded-full hover:scale-110 transition-transform duration-300">
         <LinkedinIcon class="w-4 2xl:w-6 icon-gradient" />
       </a>
 
-      <a href="https://github.com/seu-usuario" target="_blank" rel="noopener noreferrer"
+      <a href="https://github.com/Gabrieldev28" target="_blank" rel="noopener noreferrer"
         class="p-2 rounded-full hover:scale-110 transition-transform duration-300">
         <GithubIcon class="w-4 2xl:w-6 icon-gradient" />
       </a>
 
-      <a href="https://www.behance.net/seu-usuario" target="_blank" rel="noopener noreferrer"
+      <a href="https://www.behance.net/gabriel-ui-ux" target="_blank" rel="noopener noreferrer"
         class="p-2 rounded-full hover:scale-110 transition-transform duration-300">
         <BehanceIcon class="w-4 2xl:w-6 icon-gradient" />
       </a>

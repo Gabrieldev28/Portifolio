@@ -18,8 +18,12 @@
           <!-- Header fixo -->
           <div class="flex justify-between items-center px-6 py-3 border-b border-b-white/20 shrink-0">
             <div class="flex gap-2 items-center">
-              <h3 class="font-semibold text-sm lg:text-base 2xl:text-xl">Lumea •</h3>
-              <span class="text-sm lg:text-base 2xl:text-xl">Product Design</span>
+              <h3 class="font-semibold text-sm lg:text-base 2xl:text-xl">
+                {{ t('modalLumea.title') }} •
+              </h3>
+              <span class="text-sm lg:text-base 2xl:text-xl">
+                {{ t('modalLumea.subtitle') }}
+              </span>
             </div>
             <button @click="close" class="hover:opacity-70 transition-opacity">
               <CloseIcon class="w-2 lg:w-6" />
@@ -28,83 +32,93 @@
 
           <!-- Conteúdo com scroll interno -->
           <div class="overflow-y-auto flex-1">
-            <!-- Todo o conteúdo que você já tinha -->
+            <!-- Header do projeto -->
             <div class="flex px-8 lg:px-20 py-4 lg:py-10 items-center gap-4 lg:gap-12">
-              <LumeaLogo />
+              <LumeaLogo class="lg:w-36 lg:h-36" />
               <div class="flex flex-col gap-2 lg:gap-4 tracking-wider">
                 <div class="flex gap-2 items-center">
-                  <h4 class="text-sm lg:text-xl 2xl:text-3xl font-bold">Nitro •</h4>
-                  <span class="text-sm lg:text-xl 2xl:text-3xl italic font-extralight">2023 - Atual</span>
+                  <h4 class="text-sm lg:text-2xl 2xl:text-3xl font-bold">
+                    {{ t('modalLumea.title') }} •
+                  </h4>
+                  <span class="text-sm lg:text-2xl 2xl:text-3xl italic font-extralight">
+                    {{ t('modalLumea.period') }}
+                  </span>
                 </div>
-                <p class="portrait:text-[10px] landscape:text-lg lg:text-xl 2xl:text-2xl italic font-extralight">Da ideia inicial a um ecossistema de produto</p>
+                <p class="portrait:text-[10px] landscape:text-lg lg:text-xl 2xl:text-2xl italic font-extralight">
+                  {{ t('modalLumea.tagline') }}
+                </p>
               </div>
             </div>
 
-            <div class="flex portrait:flex-col justify-between items-center gap-8 px-8 lg:px-20">
-              <div class="flex flex-col gap-2 lg:gap-4 text-xs lg:text-base lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight">
-                <p>A Nitro nasceu em 2023 como um projeto pessoal para unir comunidade automotiva, conteúdo e identidade
-                  em um único lugar. O que começou como um exercício de programação acabou se tornando o projeto onde
-                  desenvolvi minha forma de pensar como designer de produto.</p>
-                <p>Ao longo dos anos, a Nitro foi remodelada diversas vezes. Cada versão representou uma nova hipótese,
-                  uma mudança de direção ou uma tentativa de resolver o mesmo problema de uma forma melhor. Foi nesse
-                  processo que aprendi UI/UX, arquitetura de informação, design systems, branding, Flutter e
-                  pensamento de produto.</p>
+            <!-- Introdução -->
+            <div class="flex portrait:flex-col justify-between items-center gap-12 px-8 lg:px-20">
+              <div class="flex w-full lg:w-4/6 flex-col gap-2 lg:gap-4 text-xs lg:text-base lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight">
+                <p>{{ t('modalLumea.p1') }}</p>
+                <p>{{ t('modalLumea.p2') }}</p>
+                <p>{{ t('modalLumea.p3') }}</p>
               </div>
-              <img src="../assets/images/mockNitro.png" alt="celular mockup1" class="portrait: w-2/4 landscape:w-1/4" >
+              <img
+                src="../assets/images/lumeaMock1.png"
+                alt="celular mockup1"
+                class="portrait:w-2/4 landscape:w-1/4"
+              />
             </div>
 
+            <p class="flex portrait:flex-col justify-between items-center gap-8 px-8 lg:px-20 py-4 text-xs lg:text-base lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight">
+              {{ t('modalLumea.p4') }}
+            </p>
+
+            <!-- Conceito central -->
             <div class="flex flex-col px-8 lg:px-20 lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight gap-2 lg:gap-8 text-xs lg:text-base">
-              <h4 class="text-base lg:text-3xl font-bold">A identidade da Nitro</h4>
-              <p>O nome Nitro foi escolhido como uma metáfora para o próprio nitro automotivo: o impulso extra usado
-                quando é preciso ir além. A ideia sempre foi representar movimento, evolução e a busca constante por
-                algo maior.</p>
-              <p>A primeira identidade visual foi construída com dois triângulos formando um “N” de maneira subliminar. A
-                execução ainda era simples, mas a intenção já existia: criar uma marca que transmitisse direção sem
-                recorrer aos símbolos mais óbvios do universo automotivo.</p>
-              <div class="flex portrait:flex-col landscape:flex-row justify-around items-center p-0 lg:p-8">
-                <NitroOldIcon />
-                <div class="flex flex-col gap-2 lg:gap-4">
-                  <p>As cores permaneceram as mesmas desde o início: </p>
-                  <div class="flex items-center gap-2 lg:gap-4">
-                    <DotRedIcon />
-                    <span>Vermelho, representando paixão e energia.</span>
-                  </div>
-                  <div class="flex items-center gap-2 lg:gap-4">
-                    <DotPurpleIcon />
-                    <span>Roxo, representando criatividade e experimentação.</span>
-                  </div>
-                  <p>A identidade evoluiu junto com o produto.</p>
-                </div>
+              <h4 class="text-base lg:text-3xl font-bold">
+                {{ t('modalLumea.conceptTitle') }}
+              </h4>
+              <p>{{ t('modalLumea.conceptP1') }}</p>
+
+              <div class="flex justify-around items-center p-0 lg:p-8">
+                <img
+                  src="../assets/images/lumeaMock50.png"
+                  alt="imagem celular com 50% de saude financeira"
+                  class="w-[25%]"
+                />
+                <img
+                  src="../assets/images/lumeaMock80.png"
+                  alt="imagem celular com 80% de saude financeira"
+                  class="w-[30%]"
+                />
+                <img
+                  src="../assets/images/lumeaMock20.png"
+                  alt="imagem celular com 20% de saude financeira"
+                  class="w-[27%]"
+                />
               </div>
-              <p>Na versão definitiva, essas cores deixam de ser apenas um gradiente e passam a representar um conceito.
-                Os dois caminhos se encontram para formar uma única direção, simbolizando a união entre paixão e
-                criatividade — ou, olhando para trás, entre design e tecnologia. A identidade visual evoluiu junto com o
-                produto.</p>
+
+              <p>{{ t('modalLumea.conceptP2') }}</p>
             </div>
 
-            <div class="flex flex-col px-8 lg:px-20 py-8 gap-4 lg:gap-8 lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight  text-xs lg:text-base">
-              <h4 class="text-base lg:text-3xl font-bold">O que a Nitro representa hoje</h4>
-              <p>Ao longo dos anos, o projeto foi remodelado diversas vezes. A maior mudança aconteceu quando percebi que
-                o problema não era apenas compartilhar carros, mas conectar pessoas, serviços, eventos e experiências
-                dentro do mesmo ecossistema.</p>
-              <p>A Nitro deixou de ser apenas uma rede social para entusiastas e passou a ser pensada como um hub
-                automotivo, capaz de reunir comunidade, eventos, oficinas, marketplace, descoberta por localização e
-                novas experiências para quem vive o universo dos carros.</p>
-              <p>Foi o projeto onde deixei de aprender ferramentas e comecei a construir produtos.</p>
-              <div class="flex justify-between items-center">
-                <img src="../assets/images/mockNitro1.png" alt="" class="w-1/3">
-                <img src="../assets/images/mockNitro2.png" alt="" class="w-1/3">
-                <img src="../assets/images/mockNitro3.png" alt="" class="w-1/3">
-              </div>
+            <!-- O que representa -->
+            <div class="flex flex-col px-8 lg:px-20 py-8 gap-4 lg:gap-8 lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight text-xs lg:text-base">
+              <h4 class="text-base lg:text-3xl font-bold">
+                {{ t('modalLumea.representsTitle') }}
+              </h4>
+              <p>{{ t('modalLumea.representsP1') }}</p>
+              <p>{{ t('modalLumea.representsP2') }}</p>
             </div>
 
-            <div class="flex flex-col px-8 lg:px-20 py-4 lg:py-8 gap-4 lg:gap-8 lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight  text-xs lg:text-base">
-              <h4 class="text-base lg:text-3xl font-bold">Explore a evolução completa da Nitro</h4>
-              <p>Este modal apresenta um resumo da trajetória do projeto. Você pode explorar wireframes, versões
-                anteriores, decisões de produto e a evolução completa da Nitro acessando o case no Behance.</p>
-              <a href="https://www.behance.net/gabriel-ui-ux" target="_blank" rel="noopener noreferrer"
-                class="flex text-xs lg:text-lg font-medium p-1 lg:p-3 border-2 border-white/60 rounded-full self-end items-center hover:scale-105 transition-transform">
-                Abrir case completo
+            <!-- CTA -->
+            <div class="flex flex-col px-8 lg:px-20 py-4 lg:py-8 gap-4 lg:gap-8 lg:leading-relaxed 2xl:leading-loose lg:tracking-wider font-extralight text-xs lg:text-base">
+              <h4 class="text-base lg:text-3xl font-bold">
+                {{ t('modalLumea.exploreTitle') }}
+              </h4>
+              <p>{{ t('modalLumea.exploreP') }}</p>
+
+              <a
+                href="https://www.behance.net/gabriel-ui-ux"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="flex text-xs lg:text-lg font-medium p-1 lg:p-3 border-2 border-white/60 rounded-full self-end items-center hover:scale-105 transition-transform"
+              >
+                {{ t('modalLumea.cta') }}
               </a>
             </div>
           </div>
@@ -115,9 +129,11 @@
 </template>
 
 <script setup lang="ts">
-import CloseIcon from './icons/CloseIcon.vue';
-import { ref } from 'vue'
-import LumeaLogo from './icons/LumeaLogo.vue';
+import CloseIcon from './icons/CloseIcon.vue'
+import LumeaLogo from './icons/LumeaLogo.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const isOpen = defineModel<boolean>('open', { default: false })
 
@@ -132,10 +148,12 @@ function close() {
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   box-shadow: 2px 2px 25px rgb(0 0 0 / 0.25);
-  background: linear-gradient(120deg,
-      rgb(0 0 0 / 0.50) 0%,
-      rgb(0 0 0 / 0.70) 50%,
-      rgb(0 0 0 / 0.30) 100%);
+  background: linear-gradient(
+    120deg,
+    rgb(0 0 0 / 0.5) 0%,
+    rgb(0 0 0 / 0.7) 50%,
+    rgb(0 0 0 / 0.3) 100%
+  );
 }
 
 /* Animação de entrada/saída */

@@ -59,4 +59,47 @@
     "slogan": "The cycle that connects understanding, design and development in every project.",
     "session": "Session complete"
   }
+  ,"modalLumea": {
+  "title": "Lumea",
+  "subtitle": "Product Design",
+  "period": "2026 - Present",
+  "tagline": "Financial health before bank balance.",
+  "p1": "Lumea was born from a simple question: how is the couple’s financial health? While most financial apps are built to show balances, expenses and investments, this project started from the dynamics between two people who share goals, bills and decisions.",
+  "p2": "The problem I observed was recurring: in many relationships, one person ends up handling payments, planning and financial organization. When unexpected situations arise, the conversation usually starts with money and ends in strain.",
+  "p3": "LUMEA’s proposal was to invert that logic.",
+  "p4": "The app is not a joint account and does not replace banks. Each person keeps their financial autonomy, while the couple shares a clear view of planning, priorities and common goals.",
+  "conceptTitle": "The core concept",
+  "conceptP1": "The main element of the product is Health Vision, an indicator that translates the couple’s financial situation into a simple and continuous reading. Instead of asking “how much money do we have?”, the system tries to answer “are we moving in the direction we defined together?”.",
+  "conceptP2": "This change reshaped the entire product architecture: categories, goals, fixed and variable expenses started existing as part of a shared planning system, not just as financial records.",
+  "representsTitle": "What Lumea represents",
+  "representsP1": "More than a financial app, LUMEA represents an attempt to turn planning into conversation, transparency into trust, and money into a means to achieve shared goals.",
+  "representsP2": "It was a project where I mainly worked on problem research, product definition, information architecture, flows, interface and experience positioning.",
+  "exploreTitle": "Explore the full case",
+  "exploreP": "This modal presents a summary of the idea and the evolution of the concept. You can explore flows, screens, product decisions and the complete construction of LUMEA by accessing the case on Behance.",
+  "cta": "Open full case"
+},
+"nitroModal": {
+  "title": "Nitro",
+  "subtitle": "UI/UX & Flutter",
+  "period": "2023 - Present",
+  "tagline": "From the initial idea to a product ecosystem.",
+  "p1": "Nitro was born in 2023 as a personal project to bring automotive community, content and identity together in one place. What started as a programming exercise became the project where I developed my way of thinking as a product designer.",
+  "p2": "Over the years, Nitro was redesigned multiple times. Each version represented a new hypothesis, a change of direction or an attempt to solve the same problem in a better way. It was through this process that I learned UI/UX, information architecture, design systems, branding, Flutter and product thinking.",
+  "p3": "The problem I wanted to solve was simple to state and hard to solve: the automotive world is full of passionate people, but completely fragmented — WhatsApp groups, old forums, Instagram profiles, service providers with no visibility. There was no single place that connected all of it.",
+  "identityTitle": "Nitro’s identity",
+  "identityP1": "The name Nitro was chosen as a metaphor for automotive nitro itself: the extra boost used when you need to go beyond. The idea was always to represent movement, evolution and the constant pursuit of something greater.",
+  "identityP2": "The first visual identity was built with two triangles forming an “N” in a subliminal way. In the final version, the logo came to represent a concept: two paths that cross to reach the same place.",
+  "identityP3": "The colors follow this idea: red representing passion and energy, and purple representing creativity and experimentation. The gradient is not just an aesthetic effect — it is the visual representation of the connection between passion and creativity, between design and technology.",
+  "representsTitle": "What Nitro represents today",
+  "representsP1": "Over the years, the project was reshaped several times. The biggest shift happened when I realized the problem was not only about sharing cars, but about connecting people, services, events and experiences within the same ecosystem.",
+  "representsP2": "Nitro stopped being just a social network for enthusiasts and started being designed as an automotive hub — able to bring together community, events, workshops, marketplace, location-based discovery and new experiences for people who live the car world.",
+  "representsP3": "It was the project where I stopped only learning tools and started building products.",
+  "exploreTitle": "Explore the full evolution of Nitro",
+  "exploreP": "This modal presents a summary of the project’s journey. You can explore wireframes, previous versions, product decisions and the complete evolution of Nitro by accessing the case on Behance.",
+  "cta": "Open full case",
+  "colorsIntro": "The colors have remained the same since the beginning:",
+"colorRed": "Red, representing passion and energy.",
+"colorPurple": "Purple, representing creativity and experimentation.",
+"identityEvolved": "The identity evolved along with the product."
+}
 }
