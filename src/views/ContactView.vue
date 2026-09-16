@@ -73,7 +73,7 @@ const { glassClass } = useTheme()
 
 const socialLinks = [
   { name: 'Behance', href: 'https://www.behance.net/gabriel-ui-ux', icon: BehanceIcon },
-  { name: 'GitHub', href: 'https://https://github.com/Gabrieldev28', icon: GithubIcon },
+  { name: 'GitHub', href: 'https://github.com/Gabrieldev28', icon: GithubIcon },
   { name: 'LinkedIn', href: 'https://www.linkedin.com/in/gabrielaugustodacosta28/', icon: LinkedinIcon },
   { name: 'Email', href: 'mailto:gabrieldev28@gmail.com', icon: EmailIcon },
   { name: 'WhatsApp', href: 'https://wa.me/5511983796012', icon: WhatsappIcon },
